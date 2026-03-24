@@ -1,0 +1,76 @@
+// MARK: Main menu
+
+.menu_desktop {
+  @include setupWrapSection;
+  @include fluid("padding-top", 24);
+  @include fluid("padding-bottom", 24);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //   MARK: logo
+  .logo {
+    img {
+      // width: 157px;
+      @include fluid("width", 157);
+    }
+  }
+
+  //   MARK: main menu desktop
+  .main_menu {
+    width: fit-content;
+    ul {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      @include fluid("gap", 42);
+      li {
+        a {
+          transition: color 0.3s ease;
+          @include fz_16;
+          white-space: nowrap;
+          font-weight: 500;
+          line-height: 110%;
+          letter-spacing: -0.02em;
+          color: rgba(255, 255, 255, 0.8);
+
+          &:hover {
+            color: $accent_color;
+          }
+        }
+      }
+    }
+  }
+  //   MARK: contacts block
+  .contacts_block {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    @include fluid("gap", 8);
+    img {
+      @include fluid("width", 26);
+    }
+    a {
+      font-weight: 600;
+      @include fz_20;
+      line-height: 110%;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+  }
+
+  //   MARK: socials block
+  .socials_block {
+    ul {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+
+      @include fluid("gap", 11);
+      img {
+        @include fluid("width", 36);
+      }
+    }
+  }
+}

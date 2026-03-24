@@ -133,3 +133,20 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+// common styles
+body {
+  background-color: $bg_color;
+}
+
+* {
+  color: $text_color_main;
+  font-family: "Jura", sans-serif;
+}
+
+a {
+  font-family: "Jura", sans-serif;
+  &:hover {
+    color: $accent_color;
+  }
+}

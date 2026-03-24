@@ -51,3 +51,22 @@
     #{$prop}: #{$val-mob}px;
   }
 }
+
+@mixin setupWrapSection {
+  width: 100%;
+  @include fluid("max-width", 1400); //   max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin standartTransitional {
+  transition: all 0.3s ease;
+}
+
+// MARK: Fonts
+@mixin fz_20 {
+  @include fluid-font(10, 20);
+}
+@mixin fz_16 {
+  @include fluid-font(8, 16);
+}
