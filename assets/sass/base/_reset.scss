@@ -139,7 +139,9 @@ body {
   background-color: $bg_color;
 }
 
-* {
+*,
+ul,
+li {
   color: $text_color_main;
   font-family: "Jura", sans-serif;
 }

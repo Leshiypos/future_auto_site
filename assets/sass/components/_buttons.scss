@@ -1,0 +1,23 @@
+.btn {
+  border-radius: 16px;
+  padding: 19px 48px 22px;
+  width: 393px;
+  height: 67px;
+  box-shadow: 0 4px 0 0 #153b2b;
+  transition: opacity 0.5s ease;
+  background: linear-gradient(
+    176deg,
+    rgba(32, 69, 54, 1) 37.02%,
+    rgb(44, 96, 75) 56.25%,
+    rgba(32, 69, 54, 1) 76.92%
+  );
+
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  &:hover {
+    color: $text_color_main;
+    opacity: 0.8;
+  }
+}
