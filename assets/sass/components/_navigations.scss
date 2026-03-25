@@ -1,6 +1,6 @@
 // MARK: Main menu
 header {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   z-index: 3;
@@ -8,6 +8,7 @@ header {
 }
 .menu_desktop {
   @include setupWrapSection;
+  @include setupPaddingSection;
   @include fluid("padding-top", 24);
   @include fluid("padding-bottom", 24);
   display: flex;

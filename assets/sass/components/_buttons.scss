@@ -1,8 +1,12 @@
 .btn {
-  border-radius: 16px;
-  padding: 19px 48px 22px;
-  width: 393px;
-  height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  @include fluid("border-radius", 16);
+  padding-left: 48px;
+  padding-right: 48px;
+  @include fluid("height", 67);
   box-shadow: 0 4px 0 0 #153b2b;
   transition: opacity 0.5s ease;
   background: linear-gradient(
@@ -14,6 +18,7 @@
 
   font-weight: 700;
   font-size: 24px;
+  @include fz_24;
   letter-spacing: -0.02em;
   text-align: center;
   &:hover {
