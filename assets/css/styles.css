@@ -257,6 +257,9 @@ header {
         color: rgba(255, 255, 255, 0.8); }
         .menu_desktop .main_menu ul li a:hover {
           color: #285643; }
+    @media screen and (max-width: 1000px) {
+      .menu_desktop .main_menu {
+        display: none; } }
   .menu_desktop .contacts_block {
     display: flex;
     flex-flow: row nowrap;
@@ -281,6 +284,9 @@ header {
       font-size: clamp(14px, calc( 14px + (20 - 14) * ((100vw - 1000px) / (1400 - 1000)) ), 20px);
       letter-spacing: -0.02em;
       color: #fff; }
+    @media screen and (max-width: 1000px) {
+      .menu_desktop .contacts_block {
+        display: none; } }
   .menu_desktop .socials_block ul {
     display: flex;
     flex-flow: row nowrap;
@@ -300,6 +306,15 @@ header {
       @media screen and (max-width: 1000px) {
         .menu_desktop .socials_block ul img {
           width: 36px; } }
+  @media screen and (max-width: 1000px) {
+    .menu_desktop .burger_btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px; }
+      .menu_desktop .burger_btn img {
+        width: 100%; } }
 
 h1 {
   font-family: "Micra", sans-serif;
@@ -315,6 +330,16 @@ h2 {
 
 .text_center {
   text-align: center; }
+
+@media screen and (max-width: 1000px) {
+  .desktop {
+    display: none; } }
+
+.mobile {
+  display: none; }
+  @media screen and (max-width: 1000px) {
+    .mobile {
+      display: block; } }
 
 .features_list {
   display: flex;
@@ -394,6 +419,27 @@ h2 {
       padding-top: 149px; } }
   .hero_section .wrap_content h1 {
     margin-bottom: 34px; }
+    @media screen and (max-width: 1000px) {
+      .hero_section .wrap_content h1 {
+        font-size: 38px; } }
+@media screen and (max-width: 1000px) {
+  .hero_section .wrap_bg {
+    position: static;
+    width: 100%;
+    height: auto; }
+  .hero_section .wrap_content {
+    padding-top: 0; }
+  .hero_section .block_content {
+    position: static; }
+  .hero_section .features_list li {
+    font-size: 26px; }
+    .hero_section .features_list li .desciption {
+      max-width: 100%; }
+  .hero_section .btn_wrap a {
+    width: 100%;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto; } }
 
 .features_section {
   padding-left: 20px;

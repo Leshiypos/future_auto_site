@@ -47,6 +47,9 @@ header {
         }
       }
     }
+    @include tablet {
+      display: none;
+    }
   }
   //   MARK: contacts block
   .contacts_block {
@@ -64,6 +67,9 @@ header {
       letter-spacing: -0.02em;
       color: #fff;
     }
+    @include tablet {
+      display: none;
+    }
   }
 
   //   MARK: socials block
@@ -76,6 +82,18 @@ header {
       @include fluid("gap", 11);
       img {
         @include fluid("width", 36);
+      }
+    }
+  }
+  .burger_btn {
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      img {
+        width: 100%;
       }
     }
   }

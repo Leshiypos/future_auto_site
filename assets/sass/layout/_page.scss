@@ -19,6 +19,18 @@ h2 {
   text-align: center;
 }
 
+.desktop {
+  @include tablet {
+    display: none;
+  }
+}
+.mobile {
+  display: none;
+  @include tablet {
+    display: block;
+  }
+}
+
 // Перечисления
 .features_list {
   display: flex;
@@ -82,6 +94,38 @@ h2 {
     @include fluid("padding-top", 149);
     h1 {
       margin-bottom: 34px;
+      @include tablet {
+        font-size: 38px;
+      }
+    }
+  }
+  @include tablet {
+    .wrap_bg {
+      position: static;
+      width: 100%;
+      height: auto;
+    }
+    .wrap_content {
+      padding-top: 0;
+    }
+    .block_content {
+      position: static;
+    }
+    .features_list {
+      li {
+        font-size: 26px;
+        .desciption {
+          max-width: 100%;
+        }
+      }
+    }
+    .btn_wrap {
+      a {
+        width: 100%;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
 }
