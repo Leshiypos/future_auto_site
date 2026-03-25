@@ -556,3 +556,113 @@ h2 {
     }
   }
 }
+
+// MARK: footer
+
+footer {
+  position: relative;
+  overflow-x: clip;
+  @include fluid("margin-top", 100);
+  .wrap_footer {
+    background-color: rgba(0, 0, 0, 1);
+  }
+
+  .inner_footer {
+    @include setupPaddingSection;
+    @include setupWrapSection;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    @include fluid("padding-bottom", 63);
+    @include fluid("padding-top", 56);
+  }
+  .wrap_gradient {
+    position: absolute;
+    top: -400px;
+    overflow: hidden;
+    height: 400px;
+    width: 200%;
+    z-index: -1;
+  }
+  .gradient_top {
+    z-index: -1;
+    transform: translateX(-25%);
+    width: 100%;
+    height: 800px;
+    border-radius: 100%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(40, 86, 67, 1) 0%,
+      rgba(40, 86, 67, 0) 100%
+    );
+  }
+  h3 {
+    font-weight: 600;
+    @include font(28);
+
+    letter-spacing: -0.04em;
+    @include fluid("margin-bottom", 16);
+  }
+  .col_logo {
+    @include fluid("width", 311);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 37px;
+    .anatation {
+      font-weight: 500;
+      @include font(20);
+      line-height: 110%;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .col_contacts {
+    display: flex;
+    flex-flow: column nowrap;
+    @include fluid("gap", 47);
+    .row_block {
+      display: flex;
+      flex-flow: column nowrap;
+      @include fluid("gap", 10);
+    }
+    .contact_block {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      font-weight: 600;
+      @include font(20);
+      letter-spacing: -0.02em;
+      @include fluid("gap", 10);
+    }
+    .socials_block {
+      ul {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        @include fluid("gap", 11);
+        li {
+          @include fluid("width", 36);
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .col_legal {
+    @include fluid("width", 566);
+    .legal_text {
+      font-weight: 500;
+      font-size: 16px;
+      @include fz_16;
+      line-height: 100%;
+      letter-spacing: -0.02em;
+      p {
+        @include fluid("margin-bottom", 10);
+      }
+      span {
+        color: rgba(255, 255, 255, 0.65);
+      }
+    }
+  }
+}
