@@ -770,7 +770,7 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px 36px; }
   .catalog_section .card {
-    border-radius: 16pxpx;
+    border-radius: 16px;
     padding: 12px;
     display: flex;
     flex-flow: column nowrap;
@@ -778,10 +778,10 @@ h2 {
     gap: 22px; }
     @media screen and (min-width: 1001px) and (max-width: 1400px) {
       .catalog_section .card {
-        border-radius: calc(100vw * (16px / 1400)); } }
+        border-radius: calc(100vw * (16 / 1400)); } }
     @media screen and (max-width: 1000px) {
       .catalog_section .card {
-        border-radius: 16pxpx; } }
+        border-radius: 16px; } }
     @media screen and (min-width: 1001px) and (max-width: 1400px) {
       .catalog_section .card {
         padding: calc(100vw * (12 / 1400)); } }
@@ -918,5 +918,103 @@ h2 {
               height: 24px; } }
         .catalog_section .card.last a:hover {
           background-color: rgba(40, 86, 67, 0.4); }
+
+.work-process_section {
+  margin-top: 100px; }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .work-process_section {
+      margin-top: calc(100vw * (100 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .work-process_section {
+      margin-top: 100px; } }
+  .work-process_section .wrap_section {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .work-process_section .wrap_section {
+        max-width: calc(100vw * (1400 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .work-process_section .wrap_section {
+        max-width: 1400px; } }
+  .work-process_section h2 {
+    margin-bottom: 36px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .work-process_section h2 {
+        margin-bottom: calc(100vw * (36 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .work-process_section h2 {
+        margin-bottom: 36px; } }
+  .work-process_section .steps_wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 33px;
+    row-gap: 50px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .work-process_section .steps_wrap {
+        column-gap: calc(100vw * (33 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .work-process_section .steps_wrap {
+        column-gap: 33px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .work-process_section .steps_wrap {
+        row-gap: calc(100vw * (50 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .work-process_section .steps_wrap {
+        row-gap: 50px; } }
+    .work-process_section .steps_wrap .step {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      gap: 14px; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .work-process_section .steps_wrap .step {
+          gap: calc(100vw * (14 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .work-process_section .steps_wrap .step {
+          gap: 14px; } }
+    .work-process_section .steps_wrap .num_block {
+      width: 66px;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(40, 86, 67, 0.5);
+      border-radius: 50%;
+      flex-shrink: 0; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .work-process_section .steps_wrap .num_block {
+          width: calc(100vw * (66 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .work-process_section .steps_wrap .num_block {
+          width: 66px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .work-process_section .steps_wrap .num_block {
+          height: calc(100vw * (66 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .work-process_section .steps_wrap .num_block {
+          height: 66px; } }
+    .work-process_section .steps_wrap .content_block h3 {
+      font-weight: bold;
+      font-size: clamp(28 * 0.7px, calc( 28 * 0.7px + (28 - 28 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 28px);
+      line-height: 95%;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .work-process_section .steps_wrap .content_block h3 {
+          margin-bottom: calc(100vw * (8 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .work-process_section .steps_wrap .content_block h3 {
+          margin-bottom: 8px; } }
+    .work-process_section .steps_wrap .content_block .description {
+      font-weight: 500;
+      font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+      line-height: 110%;
+      letter-spacing: -0.02em;
+      color: rgba(255, 255, 255, 0.65); }
 
 /*# sourceMappingURL=styles.css.map */

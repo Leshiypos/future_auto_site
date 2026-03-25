@@ -295,7 +295,7 @@ h2 {
     gap: 30px 36px;
   }
   .card {
-    @include fluid("border-radius", 16px);
+    @include fluid("border-radius", 16);
     @include fluid("padding", 12);
     display: flex;
     flex-flow: column nowrap;
@@ -375,6 +375,57 @@ h2 {
         &:hover {
           background-color: rgba(40, 86, 67, 0.4);
         }
+      }
+    }
+  }
+}
+
+// MARK: work process section
+.work-process_section {
+  @include fluid("margin-top", 100);
+  .wrap_section {
+    @include setupPaddingSection;
+    @include setupWrapSection;
+  }
+  h2 {
+    @include fluid("margin-bottom", 36);
+  }
+  .steps_wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include fluid("column-gap", 33);
+    @include fluid("row-gap", 50);
+    .step {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      @include fluid("gap", 14);
+    }
+    .num_block {
+      @include fluid("width", 66);
+      @include fluid("height", 66);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(40, 86, 67, 0.5);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .content_block {
+      h3 {
+        font-weight: bold;
+        @include font(28);
+        line-height: 95%;
+        letter-spacing: -0.04em;
+        @include fluid("margin-bottom", 8);
+      }
+      .description {
+        font-weight: 500;
+        @include fz_18;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: rgba(255, 255, 255, 0.65);
       }
     }
   }
