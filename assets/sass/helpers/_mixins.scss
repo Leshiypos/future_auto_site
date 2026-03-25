@@ -83,7 +83,7 @@
   @include fluid-font(14, 20);
 }
 @mixin fz_24 {
-  @include fluid-font(24 * 0.7, 24);
+  @include fluid-font(23 * 0.7, 24);
 }
 @mixin fz_18 {
   @include fluid-font(18 * 0.7, 18);
