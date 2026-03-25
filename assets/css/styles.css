@@ -313,6 +313,38 @@ h2 {
 .text_center {
   text-align: center; }
 
+.features_list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+  margin-bottom: 55px; }
+  .features_list li {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+    line-height: 110%;
+    letter-spacing: -0.02em; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .features_list li {
+        gap: calc(100vw * (16 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .features_list li {
+        gap: 16px; } }
+  .features_list .marker {
+    width: 4px;
+    background: linear-gradient(180deg, #377159 0%, rgba(55, 113, 89, 0.45) 100%); }
+  .features_list .desciption {
+    max-width: 425px; }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .features_list {
+      margin-bottom: calc(100vw * (55 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .features_list {
+      margin-bottom: 55px; } }
+
 .hero_section .wrap_section {
   position: relative; }
 .hero_section .wrap_bg {
@@ -359,37 +391,6 @@ h2 {
       padding-top: 149px; } }
   .hero_section .wrap_content h1 {
     margin-bottom: 34px; }
-.hero_section .features {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 24px;
-  margin-bottom: 55px; }
-  .hero_section .features li {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 16px;
-    font-weight: 500;
-    font-size: 18px;
-    font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
-    line-height: 110%;
-    letter-spacing: -0.02em; }
-    @media screen and (min-width: 1001px) and (max-width: 1400px) {
-      .hero_section .features li {
-        gap: calc(100vw * (16 / 1400)); } }
-    @media screen and (max-width: 1000px) {
-      .hero_section .features li {
-        gap: 16px; } }
-  .hero_section .features .marker {
-    width: 4px;
-    background: linear-gradient(180deg, #377159 0%, rgba(55, 113, 89, 0.45) 100%); }
-  .hero_section .features .desciption {
-    max-width: 425px; }
-  @media screen and (min-width: 1001px) and (max-width: 1400px) {
-    .hero_section .features {
-      margin-bottom: calc(100vw * (55 / 1400)); } }
-  @media screen and (max-width: 1000px) {
-    .hero_section .features {
-      margin-bottom: 55px; } }
 
 .features_section {
   padding-left: 20px;
@@ -1016,5 +1017,119 @@ h2 {
       line-height: 110%;
       letter-spacing: -0.02em;
       color: rgba(255, 255, 255, 0.65); }
+
+.advantages_section {
+  margin-top: 100px; }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .advantages_section {
+      margin-top: calc(100vw * (100 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .advantages_section {
+      margin-top: 100px; } }
+  .advantages_section .wrap_section {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 30px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .advantages_section .wrap_section {
+        max-width: calc(100vw * (1400 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .advantages_section .wrap_section {
+        max-width: 1400px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .advantages_section .wrap_section {
+        gap: calc(100vw * (30 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .advantages_section .wrap_section {
+        gap: 30px; } }
+  .advantages_section .advantage {
+    position: relative;
+    flex: 1;
+    background: linear-gradient(180deg, rgba(40, 86, 67, 0.35) 0%, #285643 100%);
+    padding: 2px;
+    border-radius: 12px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .advantages_section .advantage {
+        border-radius: calc(100vw * (12 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .advantages_section .advantage {
+        border-radius: 12px; } }
+    .advantages_section .advantage .bg_wrap {
+      position: absolute;
+      top: 0;
+      right: 0; }
+    .advantages_section .advantage .wrap_advantage {
+      padding-top: 48px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 30px;
+      border-radius: 12px;
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 20px;
+      background: linear-gradient(180deg, #121b17 0%, #121b17 100%); }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .advantages_section .advantage .wrap_advantage {
+          padding-top: calc(100vw * (48 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .advantages_section .advantage .wrap_advantage {
+          padding-top: 48px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .advantages_section .advantage .wrap_advantage {
+          padding-bottom: calc(100vw * (20 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .advantages_section .advantage .wrap_advantage {
+          padding-bottom: 20px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .advantages_section .advantage .wrap_advantage {
+          padding-left: calc(100vw * (30 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .advantages_section .advantage .wrap_advantage {
+          padding-left: 30px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .advantages_section .advantage .wrap_advantage {
+          padding-right: calc(100vw * (30 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .advantages_section .advantage .wrap_advantage {
+          padding-right: 30px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .advantages_section .advantage .wrap_advantage {
+          border-radius: calc(100vw * (12 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .advantages_section .advantage .wrap_advantage {
+          border-radius: 12px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .advantages_section .advantage .wrap_advantage {
+          gap: calc(100vw * (20 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .advantages_section .advantage .wrap_advantage {
+          gap: 20px; } }
+      .advantages_section .advantage .wrap_advantage .features_list {
+        margin-bottom: 0; }
+        .advantages_section .advantage .wrap_advantage .features_list li .desciption {
+          font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+          line-height: 110%;
+          letter-spacing: -0.02em;
+          color: rgba(255, 255, 255, 0.65); }
+  .advantages_section h3 {
+    font-weight: 700;
+    font-size: clamp(28 * 0.7px, calc( 28 * 0.7px + (28 - 28 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 28px);
+    line-height: 95%;
+    letter-spacing: -0.04em; }
+  .advantages_section .post_title {
+    font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.65); }
+    .advantages_section .post_title span {
+      color: #285643; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -18,6 +18,38 @@ h2 {
 .text_center {
   text-align: center;
 }
+
+// Перечисления
+.features_list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+
+  li {
+    display: flex;
+    flex-flow: row nowrap;
+    @include fluid("gap", 16);
+    font-weight: 500;
+    font-size: 18px;
+    @include fz_18;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+  }
+  .marker {
+    width: 4px;
+    background: linear-gradient(
+      180deg,
+      #377159 0%,
+      rgba(55, 113, 89, 0.45) 100%
+    );
+    //   height: 100%;
+  }
+  .desciption {
+    max-width: 425px;
+  }
+  @include fluid("margin-bottom", 55);
+}
+
 // MARK: Hero section
 .hero_section {
   .wrap_section {
@@ -51,35 +83,6 @@ h2 {
     h1 {
       margin-bottom: 34px;
     }
-  }
-  .features {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 24px;
-
-    li {
-      display: flex;
-      flex-flow: row nowrap;
-      @include fluid("gap", 16);
-      font-weight: 500;
-      font-size: 18px;
-      @include fz_18;
-      line-height: 110%;
-      letter-spacing: -0.02em;
-    }
-    .marker {
-      width: 4px;
-      background: linear-gradient(
-        180deg,
-        #377159 0%,
-        rgba(55, 113, 89, 0.45) 100%
-      );
-      //   height: 100%;
-    }
-    .desciption {
-      max-width: 425px;
-    }
-    @include fluid("margin-bottom", 55);
   }
 }
 
@@ -427,6 +430,79 @@ h2 {
         letter-spacing: -0.02em;
         color: rgba(255, 255, 255, 0.65);
       }
+    }
+  }
+}
+
+//MARK: advantages section
+
+.advantages_section {
+  @include fluid("margin-top", 100);
+  .wrap_section {
+    @include setupPaddingSection;
+    @include setupWrapSection;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    @include fluid("gap", 30);
+  }
+  .advantage {
+    position: relative;
+    flex: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(40, 86, 67, 0.35) 0%,
+      rgba(40, 86, 67, 1) 100%
+    );
+    padding: 2px;
+    @include fluid("border-radius", 12);
+
+    .bg_wrap {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .wrap_advantage {
+      @include fluid("padding-top", 48);
+      @include fluid("padding-bottom", 20);
+      @include fluid("padding-left", 30);
+      @include fluid("padding-right", 30);
+      @include fluid("border-radius", 12);
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      @include fluid("gap", 20);
+      background: linear-gradient(
+        180deg,
+        rgb(18, 27, 23) 0%,
+        rgb(18, 27, 23) 100%
+      );
+      .features_list {
+        margin-bottom: 0;
+        li {
+          .desciption {
+            @include fz_18;
+            line-height: 110%;
+            letter-spacing: -0.02em;
+            color: rgba(255, 255, 255, 0.65);
+          }
+        }
+      }
+    }
+  }
+  h3 {
+    font-weight: 700;
+    @include font(28);
+    line-height: 95%;
+    letter-spacing: -0.04em;
+  }
+  .post_title {
+    @include fz_18;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.65);
+    span {
+      color: $accent_color;
     }
   }
 }
