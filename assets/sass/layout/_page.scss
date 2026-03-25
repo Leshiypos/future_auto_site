@@ -11,7 +11,7 @@ h1 {
 }
 h2 {
   font-weight: 400;
-  font-size: 38px;
+  @include fz_38;
   line-height: 120%;
   font-family: "Micra", sans-serif;
 }
@@ -129,6 +129,148 @@ h2 {
         @include fz_18;
         text-align: center;
         font-family: "Jura", sans-serif;
+      }
+    }
+  }
+  .btn_wrap {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    @include fluid("margin-top", 54);
+  }
+}
+
+// MARK: tariffs section
+
+.tariffs_section {
+  @include fluid("margin-top", 100);
+  .wrap_section {
+    @include setupPaddingSection;
+    @include setupWrapSection;
+  }
+  h2 {
+    @include fluid("margin-bottom", 40);
+    text-align: center;
+  }
+  .tariffs_block {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    @include fluid("gap", 30);
+  }
+  .card {
+    @include fluid("width", 566);
+    border-radius: 12px;
+    overflow: clip;
+    .header_block {
+      position: relative;
+
+      .card_bg {
+        position: absolute;
+        inset: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
+      }
+      .wrap_header_content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-flow: column nowrap;
+        @include fluid("gap", 9);
+        @include fluid("padding-top", 44);
+        @include fluid("padding-right", 167);
+        @include fluid("padding-bottom", 43);
+        @include fluid("padding-left", 33);
+      }
+      h3 {
+        font-weight: 700;
+        @include font(28);
+        line-height: 110%;
+        letter-spacing: -0.04em;
+      }
+      .cost {
+        font-family: "Micra", sans-serif;
+        font-weight: 400;
+        @include font(48);
+        line-height: 110%;
+        letter-spacing: -0.04em;
+      }
+      .description {
+        font-weight: 500;
+        @include font(18);
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: rgba(255, 255, 255, 0.65);
+      }
+    }
+    .services_wrap {
+      display: flex;
+      flex-flow: column nowrap;
+      @include fluid("gap", 18);
+      background: linear-gradient(
+        180deg,
+        rgba(40, 86, 67, 0.45) 0%,
+        rgba(40, 86, 67, 0.45) 100%
+      );
+      @include fluid("padding-top", 27);
+      @include fluid("padding-right", 30);
+      @include fluid("padding-left", 30);
+      @include fluid("padding-bottom", 32);
+      &.premium {
+        background: linear-gradient(
+          180deg,
+          rgba(28, 52, 83, 0.45) 0%,
+          rgba(28, 52, 83, 0.45) 100%
+        );
+      }
+    }
+    .services__block {
+      display: flex;
+      flex-flow: column nowrap;
+
+      @include fluid("gap", 6);
+      h4 {
+        font-weight: 700;
+
+        @include font(28);
+        line-height: 110%;
+        letter-spacing: -0.02em;
+      }
+    }
+    .services__list {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 6px;
+      @include fluid("gap", 6);
+      li {
+        font-weight: 500;
+        @include fz_18;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        &::before {
+          content: url("../images/icons/check.svg");
+          @include fluid("width", 20);
+          @include fluid("height", 20);
+          @include fluid("margin-right", 8);
+        }
+      }
+    }
+    .services__note {
+      @include fluid("margin-top", 18);
+      @include fz_18;
+      font-weight: 500;
+
+      line-height: 110%;
+      letter-spacing: -0.02em;
+    }
+    .btn_wrap {
+      @include fluid("margin-top", 32);
+      a {
+        width: 100%;
       }
     }
   }

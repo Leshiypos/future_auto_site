@@ -141,7 +141,12 @@ body {
 
 *,
 ul,
-li {
+li,
+h1,
+h2,
+h3,
+p,
+div {
   color: $text_color_main;
   font-family: "Jura", sans-serif;
 }

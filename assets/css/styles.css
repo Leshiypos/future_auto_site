@@ -137,7 +137,12 @@ body {
 
 *,
 ul,
-li {
+li,
+h1,
+h2,
+h3,
+p,
+div {
   color: white;
   font-family: "Jura", sans-serif; }
 
@@ -175,6 +180,9 @@ a {
   @media screen and (max-width: 1000px) {
     .btn {
       height: 67px; } }
+  .btn.blue {
+    box-shadow: 0 4px 0 0 #04070b;
+    background: linear-gradient(176deg, #1c3453 37.02%, #25446c 56.25%, #1c3453 76.92%); }
   .btn:hover {
     color: white;
     opacity: 0.8; }
@@ -299,7 +307,7 @@ h1 {
 
 h2 {
   font-weight: 400;
-  font-size: 38px;
+  font-size: clamp(26.6px, calc( 26.6px + (38 - 26.6) * ((100vw - 1000px) / (1400 - 1000)) ), 38px);
   line-height: 120%;
   font-family: "Micra", sans-serif; }
 
@@ -478,5 +486,252 @@ h2 {
         @media screen and (max-width: 1000px) {
           .features_section .features_block .feature_wrap h3 {
             margin-top: -24px; } }
+  .features_section .btn_wrap {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 54px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .features_section .btn_wrap {
+        margin-top: calc(100vw * (54 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .features_section .btn_wrap {
+        margin-top: 54px; } }
+
+.tariffs_section {
+  margin-top: 100px; }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .tariffs_section {
+      margin-top: calc(100vw * (100 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .tariffs_section {
+      margin-top: 100px; } }
+  .tariffs_section .wrap_section {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .tariffs_section .wrap_section {
+        max-width: calc(100vw * (1400 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .tariffs_section .wrap_section {
+        max-width: 1400px; } }
+  .tariffs_section h2 {
+    margin-bottom: 40px;
+    text-align: center; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .tariffs_section h2 {
+        margin-bottom: calc(100vw * (40 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .tariffs_section h2 {
+        margin-bottom: 40px; } }
+  .tariffs_section .tariffs_block {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .tariffs_section .tariffs_block {
+        gap: calc(100vw * (30 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .tariffs_section .tariffs_block {
+        gap: 30px; } }
+  .tariffs_section .card {
+    width: 566px;
+    border-radius: 12px;
+    overflow: clip; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .tariffs_section .card {
+        width: calc(100vw * (566 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .tariffs_section .card {
+        width: 566px; } }
+    .tariffs_section .card .header_block {
+      position: relative; }
+      .tariffs_section .card .header_block .card_bg {
+        position: absolute;
+        inset: 0; }
+        .tariffs_section .card .header_block .card_bg img {
+          width: 100%;
+          height: 100%;
+          z-index: -1; }
+      .tariffs_section .card .header_block .wrap_header_content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 9px;
+        padding-top: 44px;
+        padding-right: 167px;
+        padding-bottom: 43px;
+        padding-left: 33px; }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            gap: calc(100vw * (9 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            gap: 9px; } }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            padding-top: calc(100vw * (44 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            padding-top: 44px; } }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            padding-right: calc(100vw * (167 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            padding-right: 167px; } }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            padding-bottom: calc(100vw * (43 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            padding-bottom: 43px; } }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            padding-left: calc(100vw * (33 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            padding-left: 33px; } }
+      .tariffs_section .card .header_block h3 {
+        font-weight: 700;
+        font-size: clamp(28 * 0.7px, calc( 28 * 0.7px + (28 - 28 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 28px);
+        line-height: 110%;
+        letter-spacing: -0.04em; }
+      .tariffs_section .card .header_block .cost {
+        font-family: "Micra", sans-serif;
+        font-weight: 400;
+        font-size: clamp(48 * 0.7px, calc( 48 * 0.7px + (48 - 48 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 48px);
+        line-height: 110%;
+        letter-spacing: -0.04em; }
+      .tariffs_section .card .header_block .description {
+        font-weight: 500;
+        font-size: clamp(18 * 0.7px, calc( 18 * 0.7px + (18 - 18 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: rgba(255, 255, 255, 0.65); }
+    .tariffs_section .card .services_wrap {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 18px;
+      background: linear-gradient(180deg, rgba(40, 86, 67, 0.45) 0%, rgba(40, 86, 67, 0.45) 100%);
+      padding-top: 27px;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 32px; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .tariffs_section .card .services_wrap {
+          gap: calc(100vw * (18 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services_wrap {
+          gap: 18px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .tariffs_section .card .services_wrap {
+          padding-top: calc(100vw * (27 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services_wrap {
+          padding-top: 27px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .tariffs_section .card .services_wrap {
+          padding-right: calc(100vw * (30 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services_wrap {
+          padding-right: 30px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .tariffs_section .card .services_wrap {
+          padding-left: calc(100vw * (30 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services_wrap {
+          padding-left: 30px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .tariffs_section .card .services_wrap {
+          padding-bottom: calc(100vw * (32 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services_wrap {
+          padding-bottom: 32px; } }
+      .tariffs_section .card .services_wrap.premium {
+        background: linear-gradient(180deg, rgba(28, 52, 83, 0.45) 0%, rgba(28, 52, 83, 0.45) 100%); }
+    .tariffs_section .card .services__block {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 6px; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .tariffs_section .card .services__block {
+          gap: calc(100vw * (6 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services__block {
+          gap: 6px; } }
+      .tariffs_section .card .services__block h4 {
+        font-weight: 700;
+        font-size: clamp(28 * 0.7px, calc( 28 * 0.7px + (28 - 28 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 28px);
+        line-height: 110%;
+        letter-spacing: -0.02em; }
+    .tariffs_section .card .services__list {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 6px;
+      gap: 6px; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .tariffs_section .card .services__list {
+          gap: calc(100vw * (6 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services__list {
+          gap: 6px; } }
+      .tariffs_section .card .services__list li {
+        font-weight: 500;
+        font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+        line-height: 110%;
+        letter-spacing: -0.02em; }
+        .tariffs_section .card .services__list li::before {
+          content: url("../images/icons/check.svg");
+          width: 20px;
+          height: 20px;
+          margin-right: 8px; }
+          @media screen and (min-width: 1001px) and (max-width: 1400px) {
+            .tariffs_section .card .services__list li::before {
+              width: calc(100vw * (20 / 1400)); } }
+          @media screen and (max-width: 1000px) {
+            .tariffs_section .card .services__list li::before {
+              width: 20px; } }
+          @media screen and (min-width: 1001px) and (max-width: 1400px) {
+            .tariffs_section .card .services__list li::before {
+              height: calc(100vw * (20 / 1400)); } }
+          @media screen and (max-width: 1000px) {
+            .tariffs_section .card .services__list li::before {
+              height: 20px; } }
+          @media screen and (min-width: 1001px) and (max-width: 1400px) {
+            .tariffs_section .card .services__list li::before {
+              margin-right: calc(100vw * (8 / 1400)); } }
+          @media screen and (max-width: 1000px) {
+            .tariffs_section .card .services__list li::before {
+              margin-right: 8px; } }
+    .tariffs_section .card .services__note {
+      margin-top: 18px;
+      font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+      font-weight: 500;
+      line-height: 110%;
+      letter-spacing: -0.02em; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .tariffs_section .card .services__note {
+          margin-top: calc(100vw * (18 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services__note {
+          margin-top: 18px; } }
+    .tariffs_section .card .btn_wrap {
+      margin-top: 32px; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .tariffs_section .card .btn_wrap {
+          margin-top: calc(100vw * (32 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .btn_wrap {
+          margin-top: 32px; } }
+      .tariffs_section .card .btn_wrap a {
+        width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */

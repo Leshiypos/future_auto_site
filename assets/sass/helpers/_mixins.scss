@@ -70,8 +70,14 @@
 }
 
 // MARK: Fonts
+@mixin font($size) {
+  @include fluid-font(#{$size} * 0.7, #{$size});
+}
 @mixin fz_48 {
   @include fluid-font(48 * 0.7, 48);
+}
+@mixin fz_38 {
+  @include fluid-font(38 * 0.7, 38);
 }
 @mixin fz_20 {
   @include fluid-font(14, 20);

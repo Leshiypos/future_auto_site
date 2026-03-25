@@ -21,6 +21,18 @@
   @include fz_24;
   letter-spacing: -0.02em;
   text-align: center;
+
+  &.blue {
+    box-shadow: 0 4px 0 0 #04070b;
+
+    background: linear-gradient(
+      176deg,
+      rgb(28, 52, 83) 37.02%,
+      rgb(37, 68, 108) 56.25%,
+      rgb(28, 52, 83) 76.92%
+    );
+  }
+
   &:hover {
     color: $text_color_main;
     opacity: 0.8;
