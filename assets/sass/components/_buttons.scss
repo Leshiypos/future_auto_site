@@ -31,6 +31,17 @@
       rgb(28, 52, 83) 76.92%
     );
   }
+  &.black {
+    box-shadow: 0 4px 0 0 #000;
+    background:
+      linear-gradient(
+        176deg,
+        rgba(255, 255, 255, 0.06) 37.02%,
+        rgba(255, 255, 255, 0.06) 56.25%,
+        rgba(255, 255, 255, 0.06) 76.92%
+      ),
+      #0e100f;
+  }
 
   &:hover {
     color: $text_color_main;

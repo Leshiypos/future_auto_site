@@ -182,6 +182,9 @@ a {
   .btn.blue {
     box-shadow: 0 4px 0 0 #04070b;
     background: linear-gradient(176deg, #1c3453 37.02%, #25446c 56.25%, #1c3453 76.92%); }
+  .btn.black {
+    box-shadow: 0 4px 0 0 #000;
+    background: linear-gradient(176deg, rgba(255, 255, 255, 0.06) 37.02%, rgba(255, 255, 255, 0.06) 56.25%, rgba(255, 255, 255, 0.06) 76.92%), #0e100f; }
   .btn:hover {
     color: white;
     opacity: 0.8; }
@@ -1064,7 +1067,18 @@ h2 {
     .advantages_section .advantage .bg_wrap {
       position: absolute;
       top: 0;
-      right: 0; }
+      right: 0;
+      padding-right: 15px;
+      padding-top: 15px; }
+      .advantages_section .advantage .bg_wrap img {
+        width: 190px;
+        opacity: 0.3; }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .advantages_section .advantage .bg_wrap img {
+            width: calc(100vw * (190 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .advantages_section .advantage .bg_wrap img {
+            width: 190px; } }
     .advantages_section .advantage .wrap_advantage {
       padding-top: 48px;
       padding-bottom: 20px;
@@ -1131,5 +1145,99 @@ h2 {
     color: rgba(255, 255, 255, 0.65); }
     .advantages_section .post_title span {
       color: #285643; }
+
+.baner_section {
+  margin-top: 161px; }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .baner_section {
+      margin-top: calc(100vw * (161 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .baner_section {
+      margin-top: 161px; } }
+  .baner_section .wrap_section {
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 36px;
+    background: linear-gradient(180deg, #285643 0%, #285643 51.92%); }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .baner_section .wrap_section {
+        max-width: calc(100vw * (1400 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .wrap_section {
+        max-width: 1400px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .baner_section .wrap_section {
+        border-radius: calc(100vw * (36 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .wrap_section {
+        border-radius: 36px; } }
+    .baner_section .wrap_section .section_bg {
+      position: absolute;
+      bottom: 0;
+      right: 80px;
+      right: 80px;
+      width: 423px; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .baner_section .wrap_section .section_bg {
+          right: calc(100vw * (80 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .baner_section .wrap_section .section_bg {
+          right: 80px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .baner_section .wrap_section .section_bg {
+          width: calc(100vw * (423 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .baner_section .wrap_section .section_bg {
+          width: 423px; } }
+  .baner_section .content_block {
+    padding-top: 76px;
+    padding-bottom: 76px;
+    padding-left: 64px;
+    max-width: 60%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 36px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .baner_section .content_block {
+        padding-top: calc(100vw * (76 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .content_block {
+        padding-top: 76px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .baner_section .content_block {
+        padding-bottom: calc(100vw * (76 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .content_block {
+        padding-bottom: 76px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .baner_section .content_block {
+        padding-left: calc(100vw * (64 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .content_block {
+        padding-left: 64px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .baner_section .content_block {
+        gap: calc(100vw * (36 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .content_block {
+        gap: 36px; } }
+  .baner_section .post_title {
+    font-weight: 500;
+    font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+    line-height: 110%;
+    letter-spacing: -0.02em; }
+  .baner_section .btn_wrap a {
+    width: 546px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .baner_section .btn_wrap a {
+        width: calc(100vw * (546 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .btn_wrap a {
+        width: 546px; } }
 
 /*# sourceMappingURL=styles.css.map */

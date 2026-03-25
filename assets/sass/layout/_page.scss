@@ -461,6 +461,12 @@ h2 {
       position: absolute;
       top: 0;
       right: 0;
+      padding-right: 15px;
+      padding-top: 15px;
+      img {
+        @include fluid("width", 190);
+        opacity: 0.3;
+      }
     }
     .wrap_advantage {
       @include fluid("padding-top", 48);
@@ -503,6 +509,50 @@ h2 {
     color: rgba(255, 255, 255, 0.65);
     span {
       color: $accent_color;
+    }
+  }
+}
+
+// MARK: baner section
+
+.baner_section {
+  @include fluid("margin-top", 161);
+  .wrap_section {
+    position: relative;
+    @include setupPaddingSection;
+    @include setupWrapSection;
+    @include fluid("border-radius", 36);
+    background: linear-gradient(
+      180deg,
+      rgba(40, 86, 67, 1) 0%,
+      rgba(40, 86, 67, 1) 51.92%
+    );
+    .section_bg {
+      position: absolute;
+      bottom: 0;
+      right: 80px;
+      @include fluid("right", 80);
+      @include fluid("width", 423);
+    }
+  }
+  .content_block {
+    @include fluid("padding-top", 76);
+    @include fluid("padding-bottom", 76);
+    @include fluid("padding-left", 64);
+    max-width: 60%;
+    display: flex;
+    flex-flow: column nowrap;
+    @include fluid("gap", 36);
+  }
+  .post_title {
+    font-weight: 500;
+    @include fz_18;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+  }
+  .btn_wrap {
+    a {
+      @include fluid("width", 546);
     }
   }
 }
