@@ -47,4 +47,9 @@
     color: $text_color_main;
     opacity: 0.8;
   }
+  @include tablet {
+    font-size: 20px;
+    height: 58px;
+    border-radius: 10px;
+  }
 }

@@ -188,6 +188,11 @@ a {
   .btn:hover {
     color: white;
     opacity: 0.8; }
+  @media screen and (max-width: 1000px) {
+    .btn {
+      font-size: 20px;
+      height: 58px;
+      border-radius: 10px; } }
 
 header {
   position: absolute;
@@ -234,6 +239,9 @@ header {
     @media screen and (max-width: 1000px) {
       .menu_desktop .logo img {
         width: 157px; } }
+    @media screen and (max-width: 1000px) {
+      .menu_desktop .logo img {
+        width: 144px; } }
   .menu_desktop .main_menu {
     width: fit-content; }
     .menu_desktop .main_menu ul {
@@ -306,15 +314,21 @@ header {
       @media screen and (max-width: 1000px) {
         .menu_desktop .socials_block ul img {
           width: 36px; } }
-  @media screen and (max-width: 1000px) {
-    .menu_desktop .burger_btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 54px;
-      height: 54px; }
-      .menu_desktop .burger_btn img {
-        width: 100%; } }
+    @media screen and (max-width: 1000px) {
+      .menu_desktop .socials_block ul {
+        flex-direction: row-reverse; } }
+  .menu_desktop .burger_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px; }
+    .menu_desktop .burger_btn img {
+      width: 100%; }
+    @media screen and (max-width: 560px) {
+      .menu_desktop .burger_btn {
+        width: 36px;
+        height: 36px; } }
 
 h1 {
   font-family: "Micra", sans-serif;
@@ -327,19 +341,22 @@ h2 {
   font-size: clamp(26.6px, calc( 26.6px + (38 - 26.6) * ((100vw - 1000px) / (1400 - 1000)) ), 38px);
   line-height: 120%;
   font-family: "Micra", sans-serif; }
+  @media screen and (max-width: 1000px) {
+    h2 {
+      font-size: 24px; } }
 
 .text_center {
   text-align: center; }
 
 @media screen and (max-width: 1000px) {
   .desktop {
-    display: none; } }
+    display: none !important; } }
 
 .mobile {
-  display: none; }
+  display: none !important; }
   @media screen and (max-width: 1000px) {
     .mobile {
-      display: block; } }
+      display: block !important; } }
 
 .features_list {
   display: flex;
@@ -372,6 +389,9 @@ h2 {
   @media screen and (max-width: 1000px) {
     .features_list {
       margin-bottom: 55px; } }
+  @media screen and (max-width: 1000px) {
+    .features_list {
+      margin-bottom: 30px; } }
 
 .hero_section .wrap_section {
   position: relative; }
@@ -421,7 +441,7 @@ h2 {
     margin-bottom: 34px; }
     @media screen and (max-width: 1000px) {
       .hero_section .wrap_content h1 {
-        font-size: 38px; } }
+        font-size: 24px; } }
 @media screen and (max-width: 1000px) {
   .hero_section .wrap_bg {
     position: static;
@@ -431,10 +451,12 @@ h2 {
     padding-top: 0; }
   .hero_section .block_content {
     position: static; }
-  .hero_section .features_list li {
-    font-size: 26px; }
-    .hero_section .features_list li .desciption {
-      max-width: 100%; }
+  .hero_section .features_list {
+    gap: 15px; }
+    .hero_section .features_list li {
+      font-size: 16px; }
+      .hero_section .features_list li .desciption {
+        max-width: 100%; }
   .hero_section .btn_wrap a {
     width: 100%;
     max-width: 680px;
@@ -549,6 +571,19 @@ h2 {
     @media screen and (max-width: 1000px) {
       .features_section .btn_wrap {
         margin-top: 54px; } }
+  @media screen and (max-width: 1000px) {
+    .features_section {
+      margin-top: 51px; }
+      .features_section h2 {
+        font-size: 28px; }
+      .features_section .features_block {
+        column-gap: 18px;
+        row-gap: 60px; }
+        .features_section .features_block .feature_wrap h3 {
+          font-size: 15px; }
+        .features_section .features_block .feature {
+          flex: 1 1 160px;
+          max-width: 210px; } }
 
 .tariffs_section {
   margin-top: 100px; }
@@ -594,7 +629,7 @@ h2 {
         gap: 30px; } }
   .tariffs_section .card {
     width: 566px;
-    border-radius: 12px;
+    border-radius: 24px;
     overflow: clip; }
     @media screen and (min-width: 1001px) and (max-width: 1400px) {
       .tariffs_section .card {
@@ -651,6 +686,9 @@ h2 {
         @media screen and (max-width: 1000px) {
           .tariffs_section .card .header_block .wrap_header_content {
             padding-left: 33px; } }
+        @media screen and (max-width: 1000px) {
+          .tariffs_section .card .header_block .wrap_header_content {
+            padding: 22px 11px 22px 23px; } }
       .tariffs_section .card .header_block h3 {
         font-weight: 700;
         font-size: clamp(28 * 0.7px, calc( 28 * 0.7px + (28 - 28 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 28px);
@@ -662,12 +700,18 @@ h2 {
         font-size: clamp(48 * 0.7px, calc( 48 * 0.7px + (48 - 48 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 48px);
         line-height: 110%;
         letter-spacing: -0.04em; }
+        @media screen and (max-width: 1000px) {
+          .tariffs_section .card .header_block .cost {
+            font-size: 30px; } }
       .tariffs_section .card .header_block .description {
         font-weight: 500;
         font-size: clamp(18 * 0.7px, calc( 18 * 0.7px + (18 - 18 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
         line-height: 110%;
         letter-spacing: -0.02em;
         color: rgba(255, 255, 255, 0.65); }
+        @media screen and (max-width: 1000px) {
+          .tariffs_section .card .header_block .description {
+            font-size: 15px; } }
     .tariffs_section .card .services_wrap {
       display: flex;
       flex-flow: column nowrap;
@@ -709,6 +753,9 @@ h2 {
           padding-bottom: 32px; } }
       .tariffs_section .card .services_wrap.premium {
         background: linear-gradient(180deg, rgba(28, 52, 83, 0.45) 0%, rgba(28, 52, 83, 0.45) 100%); }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services_wrap {
+          padding: 18px 23px; } }
     .tariffs_section .card .services__block {
       display: flex;
       flex-flow: column nowrap;
@@ -763,6 +810,12 @@ h2 {
           @media screen and (max-width: 1000px) {
             .tariffs_section .card .services__list li::before {
               margin-right: 8px; } }
+        @media screen and (max-width: 1000px) {
+          .tariffs_section .card .services__list li {
+            font-size: 15px; } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services__list {
+          gap: 4px; } }
     .tariffs_section .card .services__note {
       margin-top: 18px;
       font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
@@ -775,6 +828,9 @@ h2 {
       @media screen and (max-width: 1000px) {
         .tariffs_section .card .services__note {
           margin-top: 18px; } }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .services__note {
+          font-size: 15px; } }
     .tariffs_section .card .btn_wrap {
       margin-top: 32px; }
       @media screen and (min-width: 1001px) and (max-width: 1400px) {
@@ -785,6 +841,22 @@ h2 {
           margin-top: 32px; } }
       .tariffs_section .card .btn_wrap a {
         width: 100%; }
+      @media screen and (max-width: 1000px) {
+        .tariffs_section .card .btn_wrap {
+          margin-top: 20px; } }
+  @media screen and (max-width: 1000px) {
+    .tariffs_section {
+      margin-top: 80px; }
+      .tariffs_section h2 {
+        margin-bottom: 23px; }
+      .tariffs_section .tariffs_block {
+        flex-flow: row wrap;
+        gap: 23px; }
+      .tariffs_section .card {
+        width: unset;
+        flex: 1 1 350px; }
+        .tariffs_section .card .header_block .wrap_header_content {
+          padding-right: 100px; } }
 
 .catalog_section {
   margin-top: 100px; }
@@ -815,10 +887,17 @@ h2 {
     @media screen and (max-width: 1000px) {
       .catalog_section h2 {
         margin-bottom: 36px; } }
+    @media screen and (max-width: 1000px) {
+      .catalog_section h2 {
+        margin-bottom: 23px; } }
   .catalog_section .models_block {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px 36px; }
+    @media screen and (max-width: 1000px) {
+      .catalog_section .models_block {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px 23px; } }
   .catalog_section .card {
     border-radius: 16px;
     padding: 12px;
@@ -865,6 +944,11 @@ h2 {
         width: 100%;
         height: 100%;
         object-fit: cover; }
+      @media screen and (max-width: 1000px) {
+        .catalog_section .card .img_wrap {
+          height: 206px;
+          border-radius: 10px;
+          margin-top: 0; } }
     .catalog_section .card .content_wrap h3 {
       font-weight: 700;
       font-size: clamp(28 * 0.7px, calc( 28 * 0.7px + (28 - 28 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 28px);
@@ -877,6 +961,10 @@ h2 {
       @media screen and (max-width: 1000px) {
         .catalog_section .card .content_wrap h3 {
           margin-bottom: 14px; } }
+      @media screen and (max-width: 1000px) {
+        .catalog_section .card .content_wrap h3 {
+          font-size: 28px;
+          margin-bottom: 10px; } }
     .catalog_section .card .content_wrap .characteristic_block {
       font-weight: 700;
       font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
@@ -898,6 +986,10 @@ h2 {
         @media screen and (max-width: 1000px) {
           .catalog_section .card .content_wrap .characteristic_block span {
             margin-right: 14px; } }
+      @media screen and (max-width: 1000px) {
+        .catalog_section .card .content_wrap .characteristic_block {
+          font-size: 16px;
+          margin-bottom: 5px; } }
     .catalog_section .card .btn_block {
       margin-top: 22px;
       margin-bottom: 4px; }
@@ -968,6 +1060,12 @@ h2 {
               height: 24px; } }
         .catalog_section .card.last a:hover {
           background-color: rgba(40, 86, 67, 0.4); }
+    @media screen and (max-width: 1000px) {
+      .catalog_section .card {
+        border-radius: 15px; } }
+  @media screen and (max-width: 1000px) {
+    .catalog_section {
+      margin-top: 51px; } }
 
 .work-process_section {
   margin-top: 100px; }

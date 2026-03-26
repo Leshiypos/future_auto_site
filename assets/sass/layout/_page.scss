@@ -14,6 +14,9 @@ h2 {
   @include fz_38;
   line-height: 120%;
   font-family: "Micra", sans-serif;
+  @include tablet {
+    font-size: 24px;
+  }
 }
 .text_center {
   text-align: center;
@@ -21,13 +24,13 @@ h2 {
 
 .desktop {
   @include tablet {
-    display: none;
+    display: none !important;
   }
 }
 .mobile {
-  display: none;
+  display: none !important;
   @include tablet {
-    display: block;
+    display: block !important;
   }
 }
 
@@ -60,6 +63,9 @@ h2 {
     max-width: 425px;
   }
   @include fluid("margin-bottom", 55);
+  @include tablet {
+    margin-bottom: 30px;
+  }
 }
 
 // MARK: Hero section
@@ -95,7 +101,7 @@ h2 {
     h1 {
       margin-bottom: 34px;
       @include tablet {
-        font-size: 38px;
+        font-size: 24px;
       }
     }
   }
@@ -112,8 +118,9 @@ h2 {
       position: static;
     }
     .features_list {
+      gap: 15px;
       li {
-        font-size: 26px;
+        font-size: 16px;
         .desciption {
           max-width: 100%;
         }
@@ -188,6 +195,25 @@ h2 {
     justify-content: center;
     @include fluid("margin-top", 54);
   }
+  @include tablet {
+    margin-top: 51px;
+    h2 {
+      font-size: 28px;
+    }
+    .features_block {
+      column-gap: 18px;
+      row-gap: 60px;
+      .feature_wrap {
+        h3 {
+          font-size: 15px;
+        }
+      }
+      .feature {
+        flex: 1 1 160px;
+        max-width: 210px;
+      }
+    }
+  }
 }
 
 // MARK: tariffs section
@@ -211,7 +237,7 @@ h2 {
   }
   .card {
     @include fluid("width", 566);
-    border-radius: 12px;
+    border-radius: 24px;
     overflow: clip;
     .header_block {
       position: relative;
@@ -235,6 +261,9 @@ h2 {
         @include fluid("padding-right", 167);
         @include fluid("padding-bottom", 43);
         @include fluid("padding-left", 33);
+        @include tablet {
+          padding: 22px 11px 22px 23px;
+        }
       }
       h3 {
         font-weight: 700;
@@ -248,6 +277,9 @@ h2 {
         @include font(48);
         line-height: 110%;
         letter-spacing: -0.04em;
+        @include tablet {
+          font-size: 30px;
+        }
       }
       .description {
         font-weight: 500;
@@ -255,6 +287,9 @@ h2 {
         line-height: 110%;
         letter-spacing: -0.02em;
         color: rgba(255, 255, 255, 0.65);
+        @include tablet {
+          font-size: 15px;
+        }
       }
     }
     .services_wrap {
@@ -276,6 +311,9 @@ h2 {
           rgba(28, 52, 83, 0.45) 0%,
           rgba(28, 52, 83, 0.45) 100%
         );
+      }
+      @include tablet {
+        padding: 18px 23px;
       }
     }
     .services__block {
@@ -307,6 +345,12 @@ h2 {
           @include fluid("height", 20);
           @include fluid("margin-right", 8);
         }
+        @include tablet {
+          font-size: 15px;
+        }
+      }
+      @include tablet {
+        gap: 4px;
       }
     }
     .services__note {
@@ -316,11 +360,36 @@ h2 {
 
       line-height: 110%;
       letter-spacing: -0.02em;
+      @include tablet {
+        font-size: 15px;
+      }
     }
     .btn_wrap {
       @include fluid("margin-top", 32);
       a {
         width: 100%;
+      }
+      @include tablet {
+        margin-top: 20px;
+      }
+    }
+  }
+  @include tablet {
+    margin-top: 80px;
+    h2 {
+      margin-bottom: 23px;
+    }
+    .tariffs_block {
+      flex-flow: row wrap;
+      gap: 23px;
+    }
+    .card {
+      width: unset;
+      flex: 1 1 350px;
+      .header_block {
+        .wrap_header_content {
+          padding-right: 100px;
+        }
       }
     }
   }
@@ -335,11 +404,18 @@ h2 {
   }
   h2 {
     @include fluid("margin-bottom", 36);
+    @include tablet {
+      margin-bottom: 23px;
+    }
   }
   .models_block {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px 36px;
+    @include tablet {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px 23px;
+    }
   }
   .card {
     @include fluid("border-radius", 16);
@@ -358,6 +434,11 @@ h2 {
         height: 100%;
         object-fit: cover;
       }
+      @include tablet {
+        height: 206px;
+        border-radius: 10px;
+        margin-top: 0;
+      }
     }
 
     .content_wrap {
@@ -368,6 +449,10 @@ h2 {
         line-height: 110%;
         letter-spacing: -0.04em;
         @include fluid("margin-bottom", 14);
+        @include tablet {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
       }
       .characteristic_block {
         font-weight: 700;
@@ -378,6 +463,10 @@ h2 {
         span {
           color: rgba(255, 255, 255, 0.65);
           @include fluid("margin-right", 14);
+        }
+        @include tablet {
+          font-size: 16px;
+          margin-bottom: 5px;
         }
       }
     }
@@ -424,6 +513,12 @@ h2 {
         }
       }
     }
+    @include tablet {
+      border-radius: 15px;
+    }
+  }
+  @include tablet {
+    margin-top: 51px;
   }
 }
 

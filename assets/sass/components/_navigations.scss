@@ -17,8 +17,10 @@ header {
   //   MARK: logo
   .logo {
     img {
-      // width: 157px;
       @include fluid("width", 157);
+      @include tablet {
+        width: 144px;
+      }
     }
   }
 
@@ -83,18 +85,23 @@ header {
       img {
         @include fluid("width", 36);
       }
+      @include tablet {
+        flex-direction: row-reverse;
+      }
     }
   }
   .burger_btn {
-    @include tablet {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 54px;
-      height: 54px;
-      img {
-        width: 100%;
-      }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    img {
+      width: 100%;
+    }
+    @include mobile {
+      width: 36px;
+      height: 36px;
     }
   }
 }
