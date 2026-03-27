@@ -1060,9 +1060,28 @@ h2 {
               height: 24px; } }
         .catalog_section .card.last a:hover {
           background-color: rgba(40, 86, 67, 0.4); }
+        @media screen and (max-width: 560px) {
+          .catalog_section .card.last a {
+            border-radius: 10px;
+            width: 100%;
+            max-width: 680px;
+            height: 58px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px; }
+            .catalog_section .card.last a .title br {
+              display: none; } }
+      @media screen and (max-width: 560px) {
+        .catalog_section .card.last {
+          padding: 0; } }
     @media screen and (max-width: 1000px) {
       .catalog_section .card {
         border-radius: 15px; } }
+    @media screen and (max-width: 560px) {
+      .catalog_section .card:nth-child(n + 4):nth-child(-n + 5) {
+        display: none; } }
   @media screen and (max-width: 1000px) {
     .catalog_section {
       margin-top: 51px; } }
@@ -1125,6 +1144,10 @@ h2 {
       @media screen and (max-width: 1000px) {
         .work-process_section .steps_wrap .step {
           gap: 14px; } }
+      @media screen and (max-width: 560px) {
+        .work-process_section .steps_wrap .step {
+          flex-direction: column;
+          gap: 10px; } }
     .work-process_section .steps_wrap .num_block {
       width: 66px;
       height: 66px;
@@ -1133,7 +1156,8 @@ h2 {
       justify-content: center;
       background-color: rgba(40, 86, 67, 0.5);
       border-radius: 50%;
-      flex-shrink: 0; }
+      flex-shrink: 0;
+      color: #5ba77c; }
       @media screen and (min-width: 1001px) and (max-width: 1400px) {
         .work-process_section .steps_wrap .num_block {
           width: calc(100vw * (66 / 1400)); } }
@@ -1146,6 +1170,11 @@ h2 {
       @media screen and (max-width: 1000px) {
         .work-process_section .steps_wrap .num_block {
           height: 66px; } }
+      @media screen and (max-width: 1000px) {
+        .work-process_section .steps_wrap .num_block {
+          width: 50px;
+          height: 50px;
+          font-size: 15px; } }
     .work-process_section .steps_wrap .content_block h3 {
       font-weight: bold;
       font-size: clamp(28 * 0.7px, calc( 28 * 0.7px + (28 - 28 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 28px);
@@ -1158,12 +1187,26 @@ h2 {
       @media screen and (max-width: 1000px) {
         .work-process_section .steps_wrap .content_block h3 {
           margin-bottom: 8px; } }
+      @media screen and (max-width: 1000px) {
+        .work-process_section .steps_wrap .content_block h3 {
+          font-size: 20px; } }
     .work-process_section .steps_wrap .content_block .description {
       font-weight: 500;
       font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
       line-height: 110%;
       letter-spacing: -0.02em;
       color: rgba(255, 255, 255, 0.65); }
+      @media screen and (max-width: 1000px) {
+        .work-process_section .steps_wrap .content_block .description {
+          font-size: 15px; } }
+    @media screen and (max-width: 1000px) {
+      .work-process_section .steps_wrap {
+        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+        column-gap: 22px;
+        row-gap: 26px; } }
+  @media screen and (max-width: 1000px) {
+    .work-process_section {
+      margin-top: 51px; } }
 
 .advantages_section {
   margin-top: 100px; }
@@ -1196,6 +1239,10 @@ h2 {
     @media screen and (max-width: 1000px) {
       .advantages_section .wrap_section {
         gap: 30px; } }
+    @media screen and (max-width: 1000px) {
+      .advantages_section .wrap_section {
+        flex-wrap: wrap;
+        gap: 21px; } }
   .advantages_section .advantage {
     position: relative;
     flex: 1;
@@ -1223,6 +1270,10 @@ h2 {
         @media screen and (max-width: 1000px) {
           .advantages_section .advantage .bg_wrap img {
             width: 190px; } }
+      @media screen and (max-width: 560px) {
+        .advantages_section .advantage .bg_wrap {
+          top: 50%;
+          transform: translateY(-50%); } }
     .advantages_section .advantage .wrap_advantage {
       padding-top: 48px;
       padding-bottom: 20px;
@@ -1277,11 +1328,28 @@ h2 {
           line-height: 110%;
           letter-spacing: -0.02em;
           color: rgba(255, 255, 255, 0.65); }
+          @media screen and (max-width: 1000px) {
+            .advantages_section .advantage .wrap_advantage .features_list li .desciption {
+              font-size: 15px; } }
+        @media screen and (max-width: 1000px) {
+          .advantages_section .advantage .wrap_advantage .features_list {
+            gap: 13px; } }
+      @media screen and (max-width: 1000px) {
+        .advantages_section .advantage .wrap_advantage {
+          padding: 30px 23px 29px;
+          gap: 13px; } }
+    @media screen and (max-width: 1000px) {
+      .advantages_section .advantage {
+        min-width: 300px;
+        flex: 1 1 300; } }
   .advantages_section h3 {
     font-weight: 700;
     font-size: clamp(28 * 0.7px, calc( 28 * 0.7px + (28 - 28 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 28px);
     line-height: 95%;
     letter-spacing: -0.04em; }
+    @media screen and (max-width: 1000px) {
+      .advantages_section h3 {
+        font-size: 23px; } }
   .advantages_section .post_title {
     font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
     line-height: 110%;
@@ -1289,9 +1357,17 @@ h2 {
     color: rgba(255, 255, 255, 0.65); }
     .advantages_section .post_title span {
       color: #285643; }
+    @media screen and (max-width: 1000px) {
+      .advantages_section .post_title {
+        font-size: 15px; } }
+  @media screen and (max-width: 1000px) {
+    .advantages_section {
+      margin-top: 51px; } }
 
 .baner_section {
-  margin-top: 161px; }
+  margin-top: 161px;
+  padding-left: 20px;
+  padding-right: 20px; }
   @media screen and (min-width: 1001px) and (max-width: 1400px) {
     .baner_section {
       margin-top: calc(100vw * (161 / 1400)); } }
@@ -1300,8 +1376,6 @@ h2 {
       margin-top: 161px; } }
   .baner_section .wrap_section {
     position: relative;
-    padding-left: 20px;
-    padding-right: 20px;
     width: 100%;
     max-width: 1400px;
     margin-left: auto;
@@ -1338,6 +1412,22 @@ h2 {
       @media screen and (max-width: 1000px) {
         .baner_section .wrap_section .section_bg {
           width: 423px; } }
+      @media screen and (max-width: 1000px) {
+        .baner_section .wrap_section .section_bg {
+          position: static;
+          width: 100%;
+          max-width: 350px;
+          margin-top: 20px; } }
+      @media screen and (max-width: 560px) {
+        .baner_section .wrap_section .section_bg {
+          margin-bottom: -90px; } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .wrap_section {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+        overflow: clip;
+        align-items: center;
+        border-radius: 15px; } }
   .baner_section .content_block {
     padding-top: 76px;
     padding-bottom: 76px;
@@ -1370,11 +1460,19 @@ h2 {
     @media screen and (max-width: 1000px) {
       .baner_section .content_block {
         gap: 36px; } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .content_block {
+        max-width: 100%;
+        padding: 30px 31px 23px 23px;
+        gap: 18px; } }
   .baner_section .post_title {
     font-weight: 500;
     font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
     line-height: 110%;
     letter-spacing: -0.02em; }
+    @media screen and (max-width: 1000px) {
+      .baner_section .post_title {
+        font-size: 15px; } }
   .baner_section .btn_wrap a {
     width: 546px; }
     @media screen and (min-width: 1001px) and (max-width: 1400px) {
@@ -1383,6 +1481,17 @@ h2 {
     @media screen and (max-width: 1000px) {
       .baner_section .btn_wrap a {
         width: 546px; } }
+    @media screen and (max-width: 1000px) {
+      .baner_section .btn_wrap a {
+        width: 100%;
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        padding-right: 10px; } }
+  @media screen and (max-width: 1000px) {
+    .baner_section {
+      margin-top: 51px; } }
 
 footer {
   position: relative;
@@ -1426,6 +1535,13 @@ footer {
     @media screen and (max-width: 1000px) {
       footer .inner_footer {
         padding-top: 56px; } }
+    @media screen and (max-width: 1000px) {
+      footer .inner_footer {
+        flex-direction: column; } }
+    @media screen and (max-width: 1000px) {
+      footer .inner_footer {
+        padding: 40px 23px 46px;
+        gap: 30px; } }
   footer .wrap_gradient {
     position: absolute;
     top: -400px;
@@ -1451,6 +1567,9 @@ footer {
     @media screen and (max-width: 1000px) {
       footer h3 {
         margin-bottom: 16px; } }
+    @media screen and (max-width: 1000px) {
+      footer h3 {
+        margin-bottom: 7px; } }
   footer .col_logo {
     width: 311px;
     display: flex;
@@ -1467,6 +1586,14 @@ footer {
       font-size: clamp(20 * 0.7px, calc( 20 * 0.7px + (20 - 20 * 0.7) * ((100vw - 1000px) / (1400 - 1000)) ), 20px);
       line-height: 110%;
       letter-spacing: -0.02em; }
+      @media screen and (max-width: 1000px) {
+        footer .col_logo .anatation {
+          font-size: 15px; } }
+    @media screen and (max-width: 1000px) {
+      footer .col_logo {
+        gap: 17px; }
+        footer .col_logo .logo img {
+          width: 182px; } }
   footer .col_contacts {
     display: flex;
     flex-flow: column nowrap;
@@ -1487,6 +1614,9 @@ footer {
       @media screen and (max-width: 1000px) {
         footer .col_contacts .row_block {
           gap: 10px; } }
+      @media screen and (max-width: 1000px) {
+        footer .col_contacts .row_block {
+          gap: 6px; } }
     footer .col_contacts .contact_block {
       display: flex;
       flex-flow: row nowrap;
@@ -1501,6 +1631,9 @@ footer {
       @media screen and (max-width: 1000px) {
         footer .col_contacts .contact_block {
           gap: 10px; } }
+      @media screen and (max-width: 1000px) {
+        footer .col_contacts .contact_block {
+          font-size: 15px; } }
     footer .col_contacts .socials_block ul {
       display: flex;
       flex-flow: row nowrap;
@@ -1522,6 +1655,13 @@ footer {
             width: 36px; } }
       footer .col_contacts .socials_block ul img {
         width: 100%; }
+    @media screen and (max-width: 1000px) {
+      footer .col_contacts .socials_block {
+        margin-top: 7px; } }
+    @media screen and (max-width: 1000px) {
+      footer .col_contacts {
+        flex-flow: row wrap;
+        justify-content: space-between; } }
   footer .col_legal {
     width: 566px; }
     @media screen and (min-width: 1001px) and (max-width: 1400px) {
@@ -1544,7 +1684,21 @@ footer {
         @media screen and (max-width: 1000px) {
           footer .col_legal .legal_text p {
             margin-bottom: 10px; } }
+        @media screen and (max-width: 1000px) {
+          footer .col_legal .legal_text p {
+            margin-bottom: 4px; } }
       footer .col_legal .legal_text span {
         color: rgba(255, 255, 255, 0.65); }
+      @media screen and (max-width: 1000px) {
+        footer .col_legal .legal_text {
+          font-size: 14px; } }
+    @media screen and (max-width: 1000px) {
+      footer .col_legal {
+        width: 100%; }
+        footer .col_legal h3 {
+          margin-bottom: 13px; } }
+  @media screen and (max-width: 1000px) {
+    footer {
+      margin-top: 51px; } }
 
 /*# sourceMappingURL=styles.css.map */

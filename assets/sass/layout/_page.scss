@@ -511,10 +511,34 @@ h2 {
         &:hover {
           background-color: rgba(40, 86, 67, 0.4);
         }
+        @include mobile {
+          border-radius: 10px;
+          width: 100%;
+          max-width: 680px;
+          height: 58px;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+          .title {
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+      @include mobile {
+        padding: 0;
       }
     }
     @include tablet {
       border-radius: 15px;
+    }
+    @include mobile {
+      &:nth-child(n + 4):nth-child(-n + 5) {
+        display: none;
+      }
     }
   }
   @include tablet {
@@ -543,6 +567,10 @@ h2 {
       justify-content: space-around;
       align-items: flex-start;
       @include fluid("gap", 14);
+      @include mobile {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
     .num_block {
       @include fluid("width", 66);
@@ -553,6 +581,12 @@ h2 {
       background-color: rgba(40, 86, 67, 0.5);
       border-radius: 50%;
       flex-shrink: 0;
+      color: rgba(91, 167, 124, 1);
+      @include tablet {
+        width: 50px;
+        height: 50px;
+        font-size: 15px;
+      }
     }
     .content_block {
       h3 {
@@ -561,6 +595,9 @@ h2 {
         line-height: 95%;
         letter-spacing: -0.04em;
         @include fluid("margin-bottom", 8);
+        @include tablet {
+          font-size: 20px;
+        }
       }
       .description {
         font-weight: 500;
@@ -568,8 +605,19 @@ h2 {
         line-height: 110%;
         letter-spacing: -0.02em;
         color: rgba(255, 255, 255, 0.65);
+        @include tablet {
+          font-size: 15px;
+        }
       }
     }
+    @include tablet {
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      column-gap: 22px;
+      row-gap: 26px;
+    }
+  }
+  @include tablet {
+    margin-top: 51px;
   }
 }
 
@@ -584,6 +632,10 @@ h2 {
     flex-flow: row nowrap;
     justify-content: space-between;
     @include fluid("gap", 30);
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 21px;
+    }
   }
   .advantage {
     position: relative;
@@ -605,6 +657,10 @@ h2 {
       img {
         @include fluid("width", 190);
         opacity: 0.3;
+      }
+      @include mobile {
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
     .wrap_advantage {
@@ -630,9 +686,23 @@ h2 {
             line-height: 110%;
             letter-spacing: -0.02em;
             color: rgba(255, 255, 255, 0.65);
+            @include tablet {
+              font-size: 15px;
+            }
           }
         }
+        @include tablet {
+          gap: 13px;
+        }
       }
+      @include tablet {
+        padding: 30px 23px 29px;
+        gap: 13px;
+      }
+    }
+    @include tablet {
+      min-width: 300px;
+      flex: 1 1 300;
     }
   }
   h3 {
@@ -640,6 +710,9 @@ h2 {
     @include font(28);
     line-height: 95%;
     letter-spacing: -0.04em;
+    @include tablet {
+      font-size: 23px;
+    }
   }
   .post_title {
     @include fz_18;
@@ -649,6 +722,12 @@ h2 {
     span {
       color: $accent_color;
     }
+    @include tablet {
+      font-size: 15px;
+    }
+  }
+  @include tablet {
+    margin-top: 51px;
   }
 }
 
@@ -656,9 +735,9 @@ h2 {
 
 .baner_section {
   @include fluid("margin-top", 161);
+  @include setupPaddingSection;
   .wrap_section {
     position: relative;
-    @include setupPaddingSection;
     @include setupWrapSection;
     @include fluid("border-radius", 36);
     background: linear-gradient(
@@ -672,6 +751,22 @@ h2 {
       right: 80px;
       @include fluid("right", 80);
       @include fluid("width", 423);
+      @include tablet {
+        position: static;
+        width: 100%;
+        max-width: 350px;
+        margin-top: 20px;
+      }
+      @include mobile {
+        margin-bottom: -90px;
+      }
+    }
+    @include tablet {
+      display: flex;
+      flex-flow: column-reverse nowrap;
+      overflow: clip;
+      align-items: center;
+      border-radius: 15px;
     }
   }
   .content_block {
@@ -682,17 +777,36 @@ h2 {
     display: flex;
     flex-flow: column nowrap;
     @include fluid("gap", 36);
+    @include tablet {
+      max-width: 100%;
+      padding: 30px 31px 23px 23px;
+      gap: 18px;
+    }
   }
   .post_title {
     font-weight: 500;
     @include fz_18;
     line-height: 110%;
     letter-spacing: -0.02em;
+    @include tablet {
+      font-size: 15px;
+    }
   }
   .btn_wrap {
     a {
       @include fluid("width", 546);
+      @include tablet {
+        width: 100%;
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
     }
+  }
+  @include tablet {
+    margin-top: 51px;
   }
 }
 
@@ -714,6 +828,13 @@ footer {
     justify-content: space-between;
     @include fluid("padding-bottom", 63);
     @include fluid("padding-top", 56);
+    @include tablet {
+      flex-direction: column;
+    }
+    @include tablet {
+      padding: 40px 23px 46px;
+      gap: 30px;
+    }
   }
   .wrap_gradient {
     position: absolute;
@@ -741,6 +862,9 @@ footer {
 
     letter-spacing: -0.04em;
     @include fluid("margin-bottom", 16);
+    @include tablet {
+      margin-bottom: 7px;
+    }
   }
   .col_logo {
     @include fluid("width", 311);
@@ -752,6 +876,17 @@ footer {
       @include font(20);
       line-height: 110%;
       letter-spacing: -0.02em;
+      @include tablet {
+        font-size: 15px;
+      }
+    }
+    @include tablet {
+      gap: 17px;
+      .logo {
+        img {
+          width: 182px;
+        }
+      }
     }
   }
 
@@ -763,6 +898,9 @@ footer {
       display: flex;
       flex-flow: column nowrap;
       @include fluid("gap", 10);
+      @include tablet {
+        gap: 6px;
+      }
     }
     .contact_block {
       display: flex;
@@ -772,6 +910,9 @@ footer {
       @include font(20);
       letter-spacing: -0.02em;
       @include fluid("gap", 10);
+      @include tablet {
+        font-size: 15px;
+      }
     }
     .socials_block {
       ul {
@@ -786,6 +927,13 @@ footer {
           width: 100%;
         }
       }
+      @include tablet {
+        margin-top: 7px;
+      }
+    }
+    @include tablet {
+      flex-flow: row wrap;
+      justify-content: space-between;
     }
   }
   .col_legal {
@@ -798,10 +946,25 @@ footer {
       letter-spacing: -0.02em;
       p {
         @include fluid("margin-bottom", 10);
+        @include tablet {
+          margin-bottom: 4px;
+        }
       }
       span {
         color: rgba(255, 255, 255, 0.65);
       }
+      @include tablet {
+        font-size: 14px;
+      }
     }
+    @include tablet {
+      h3 {
+        margin-bottom: 13px;
+      }
+      width: 100%;
+    }
+  }
+  @include tablet {
+    margin-top: 51px;
   }
 }
