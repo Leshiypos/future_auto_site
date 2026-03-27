@@ -1,16 +1,23 @@
 // MARK: Main menu
 header {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  z-index: 3;
+  z-index: 100;
   width: 100%;
+  transition: all 1s ease;
+  &.darken {
+    backdrop-filter: blur(50px);
+    background: rgba(0, 0, 0, 0.4);
+  }
 }
 .menu_desktop {
   @include setupWrapSection;
   @include setupPaddingSection;
   @include fluid("padding-top", 24);
   @include fluid("padding-bottom", 24);
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,5 +110,47 @@ header {
       width: 36px;
       height: 36px;
     }
+  }
+  @include tablet {
+    padding: 20px 22px;
+  }
+}
+
+// MARK: mobile menu
+
+.wrap_menu_mobile {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  background-color: rgba(9, 8, 6, 1);
+  height: 100%;
+  padding: 17px 23px;
+  padding-top: 0;
+  top: -120%;
+
+  transition: all 0.5s ease;
+  .mobile_menu {
+    a {
+      display: block;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 110%;
+      letter-spacing: -0.02em;
+      padding-bottom: 18px;
+      padding-top: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+  .socials_block {
+    margin-top: 23px;
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+  &.active {
+    top: 78px;
   }
 }

@@ -195,11 +195,15 @@ a {
       border-radius: 10px; } }
 
 header {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  z-index: 3;
-  width: 100%; }
+  z-index: 100;
+  width: 100%;
+  transition: all 1s ease; }
+  header.darken {
+    backdrop-filter: blur(50px);
+    background: rgba(0, 0, 0, 0.4); }
 
 .menu_desktop {
   width: 100%;
@@ -210,6 +214,7 @@ header {
   padding-right: 20px;
   padding-top: 24px;
   padding-bottom: 24px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between; }
@@ -329,6 +334,38 @@ header {
       .menu_desktop .burger_btn {
         width: 36px;
         height: 36px; } }
+  @media screen and (max-width: 1000px) {
+    .menu_desktop {
+      padding: 20px 22px; } }
+
+.wrap_menu_mobile {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  background-color: #090806;
+  height: 100%;
+  padding: 17px 23px;
+  padding-top: 0;
+  top: -120%;
+  transition: all 0.5s ease; }
+  .wrap_menu_mobile .mobile_menu a {
+    display: block;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+  .wrap_menu_mobile .socials_block {
+    margin-top: 23px; }
+    .wrap_menu_mobile .socials_block ul {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      gap: 15px; }
+  .wrap_menu_mobile.active {
+    top: 78px; }
 
 h1 {
   font-family: "Micra", sans-serif;
