@@ -1068,6 +1068,11 @@ body {
   }
 }
 .tariffs_section {
+  h2 {
+    @include tablet {
+      margin-bottom: 11px;
+    }
+  }
   .section_post_title {
     font-weight: 500;
     font-size: 18px;
@@ -1078,12 +1083,20 @@ body {
     margin-right: auto;
     @include fluid("width", 982);
     @include fluid("margin-bottom", 36);
+    @include tablet {
+      width: 100%;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
   }
 }
 
 // MARK: comparison section
 .comparison_section {
   @include fluid("margin-top", 100);
+  @include tablet {
+    margin-top: 51px;
+  }
   .wrap_section {
     @include setupPaddingSection;
     @include setupWrapSection;
@@ -1091,6 +1104,10 @@ body {
   }
   h2 {
     @include fluid("margin-bottom", 36);
+    text-align: center;
+    @include tablet {
+      margin-bottom: 23px;
+    }
   }
   .comparioson_block {
     li {
@@ -1103,9 +1120,17 @@ body {
       @include fz_22;
       line-height: 110%;
       letter-spacing: -0.02em;
+      @include tablet {
+        font-size: 14px;
+        height: 55px;
+      }
       img {
         @include fluid("widht", 42);
         @include fluid("height", 42);
+        @include tablet {
+          width: 25px;
+          height: 25px;
+        }
       }
       & > div {
         display: flex;
@@ -1116,6 +1141,9 @@ body {
       .param {
         @include fluid("width", 343);
         justify-content: flex-start;
+        @include tablet {
+          width: 35%;
+        }
       }
       .base {
         flex: 1;
@@ -1129,6 +1157,7 @@ body {
       }
       .premium {
         flex: 1;
+        text-align: center;
         background:
           linear-gradient(
             180deg,
@@ -1208,6 +1237,12 @@ body {
     border: 1px solid #285643;
     @include fluid("border-radius", 36);
     background: rgba(40, 86, 67, 0.15);
+    @include tablet {
+      flex-direction: column;
+      padding: 15px 15px 36px;
+      border-radius: 15px;
+      gap: 23px;
+    }
   }
   .col {
     flex: 1;
@@ -1219,19 +1254,44 @@ body {
         height: 100%;
         object-fit: cover;
       }
+      @include tablet {
+        border-radius: 8px;
+      }
     }
     h2 {
       font-weight: 400;
       @include fz_48;
       @include fluid("margin-bottom", 12);
+      @include tablet {
+        font-size: 24px;
+        margin-bottom: 11px;
+      }
     }
     .description {
       font-weight: 500;
       @include fz_18;
       line-height: 110%;
       letter-spacing: -0.02em;
+      a {
+        color: rgba(91, 167, 124, 1);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
       p {
         @include fluid("margin-bottom", 14);
+      }
+      @include tablet {
+        font-size: 16px;
+        p {
+          margin-bottom: 12px;
+        }
+      }
+    }
+    &.conent_col {
+      @include tablet {
+        padding-left: 20px;
+        padding-right: 20px;
       }
     }
   }

@@ -1868,6 +1868,9 @@ body {
 .tarrifs_page .wrap_gradient {
   display: none; }
 
+@media screen and (max-width: 1000px) {
+  .tariffs_section h2 {
+    margin-bottom: 11px; } }
 .tariffs_section .section_post_title {
   font-weight: 500;
   font-size: 18px;
@@ -1890,6 +1893,11 @@ body {
   @media screen and (max-width: 1000px) {
     .tariffs_section .section_post_title {
       margin-bottom: 36px; } }
+  @media screen and (max-width: 1000px) {
+    .tariffs_section .section_post_title {
+      width: 100%;
+      font-size: 16px;
+      margin-bottom: 25px; } }
 
 .comparison_section {
   margin-top: 100px; }
@@ -1899,6 +1907,9 @@ body {
   @media screen and (max-width: 1000px) {
     .comparison_section {
       margin-top: 100px; } }
+  @media screen and (max-width: 1000px) {
+    .comparison_section {
+      margin-top: 51px; } }
   .comparison_section .wrap_section {
     padding-left: 20px;
     padding-right: 20px;
@@ -1920,13 +1931,17 @@ body {
       .comparison_section .wrap_section {
         max-width: 1000px; } }
   .comparison_section h2 {
-    margin-bottom: 36px; }
+    margin-bottom: 36px;
+    text-align: center; }
     @media screen and (min-width: 1001px) and (max-width: 1400px) {
       .comparison_section h2 {
         margin-bottom: calc(100vw * (36 / 1400)); } }
     @media screen and (max-width: 1000px) {
       .comparison_section h2 {
         margin-bottom: 36px; } }
+    @media screen and (max-width: 1000px) {
+      .comparison_section h2 {
+        margin-bottom: 23px; } }
   .comparison_section .comparioson_block li {
     display: flex;
     flex-flow: row nowrap;
@@ -1943,6 +1958,10 @@ body {
     @media screen and (max-width: 1000px) {
       .comparison_section .comparioson_block li {
         height: 70px; } }
+    @media screen and (max-width: 1000px) {
+      .comparison_section .comparioson_block li {
+        font-size: 14px;
+        height: 55px; } }
     .comparison_section .comparioson_block li img {
       widht: 42px;
       height: 42px; }
@@ -1958,6 +1977,10 @@ body {
       @media screen and (max-width: 1000px) {
         .comparison_section .comparioson_block li img {
           height: 42px; } }
+      @media screen and (max-width: 1000px) {
+        .comparison_section .comparioson_block li img {
+          width: 25px;
+          height: 25px; } }
     .comparison_section .comparioson_block li > div {
       display: flex;
       flex-direction: row;
@@ -1972,11 +1995,15 @@ body {
       @media screen and (max-width: 1000px) {
         .comparison_section .comparioson_block li .param {
           width: 343px; } }
+      @media screen and (max-width: 1000px) {
+        .comparison_section .comparioson_block li .param {
+          width: 35%; } }
     .comparison_section .comparioson_block li .base {
       flex: 1;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 52.76%), rgba(40, 86, 67, 0.4); }
     .comparison_section .comparioson_block li .premium {
       flex: 1;
+      text-align: center;
       background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 52.76%), rgba(28, 52, 83, 0.4); }
     .comparison_section .comparioson_block li.header_table {
       border-bottom: none; }
@@ -2077,6 +2104,12 @@ body {
     @media screen and (max-width: 1000px) {
       .baner_two_section .wrap_section {
         border-radius: 36px; } }
+    @media screen and (max-width: 1000px) {
+      .baner_two_section .wrap_section {
+        flex-direction: column;
+        padding: 15px 15px 36px;
+        border-radius: 15px;
+        gap: 23px; } }
   .baner_two_section .col {
     flex: 1; }
     .baner_two_section .col.img_col {
@@ -2092,6 +2125,9 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover; }
+      @media screen and (max-width: 1000px) {
+        .baner_two_section .col.img_col {
+          border-radius: 8px; } }
     .baner_two_section .col h2 {
       font-weight: 400;
       font-size: clamp(33.6px, calc( 33.6px + (48 - 33.6) * ((100vw - 1000px) / (1400 - 1000)) ), 48px);
@@ -2102,11 +2138,19 @@ body {
       @media screen and (max-width: 1000px) {
         .baner_two_section .col h2 {
           margin-bottom: 12px; } }
+      @media screen and (max-width: 1000px) {
+        .baner_two_section .col h2 {
+          font-size: 24px;
+          margin-bottom: 11px; } }
     .baner_two_section .col .description {
       font-weight: 500;
       font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
       line-height: 110%;
       letter-spacing: -0.02em; }
+      .baner_two_section .col .description a {
+        color: #5ba77c; }
+        .baner_two_section .col .description a:hover {
+          text-decoration: underline; }
       .baner_two_section .col .description p {
         margin-bottom: 14px; }
         @media screen and (min-width: 1001px) and (max-width: 1400px) {
@@ -2115,5 +2159,14 @@ body {
         @media screen and (max-width: 1000px) {
           .baner_two_section .col .description p {
             margin-bottom: 14px; } }
+      @media screen and (max-width: 1000px) {
+        .baner_two_section .col .description {
+          font-size: 16px; }
+          .baner_two_section .col .description p {
+            margin-bottom: 12px; } }
+    @media screen and (max-width: 1000px) {
+      .baner_two_section .col.conent_col {
+        padding-left: 20px;
+        padding-right: 20px; } }
 
 /*# sourceMappingURL=styles.css.map */
