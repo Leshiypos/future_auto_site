@@ -34,6 +34,83 @@ h2 {
   }
 }
 
+// MARK: Gradients
+.wrap_gradient_center {
+  position: absolute;
+  @include fluid("top", 879);
+  left: 0;
+  z-index: -1;
+  @include fluid("width", 1400);
+  @include fluid("height", 1400);
+  overflow: hidden;
+  opacity: 0.5;
+  .gradient {
+    transform: translateX(-60%);
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(40, 86, 67, 1) 0%,
+      rgba(40, 86, 67, 0) 100%
+    );
+  }
+  @include tablet {
+    display: none;
+  }
+}
+.wrap_gradient_top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  overflow: hidden;
+  @include fluid("height", 1400);
+  @include fluid("width", 1400);
+  overflow: clip;
+  opacity: 0.5;
+  .gradient {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(40, 86, 67, 1) 0%,
+      rgba(40, 86, 67, 0) 100%
+    );
+    transform: translate(55%, -50%);
+  }
+  @include tablet {
+    display: none;
+  }
+}
+.wrap_gradient_bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  overflow: hidden;
+  @include fluid("height", 1800);
+  @include fluid("width", 1800);
+  overflow: clip;
+  opacity: 0.7;
+  .gradient {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(40, 86, 67, 1) 0%,
+      rgba(40, 86, 67, 0) 100%
+    );
+    transform: translate(55%, 30%);
+  }
+  @include tablet {
+    display: none;
+  }
+}
 // Перечисления
 .features_list {
   display: flex;
@@ -224,6 +301,7 @@ h2 {
     @include setupPaddingSection;
     @include setupWrapSection;
   }
+  h1,
   h2 {
     @include fluid("margin-bottom", 40);
     text-align: center;
@@ -376,6 +454,7 @@ h2 {
   }
   @include tablet {
     margin-top: 80px;
+    h1,
     h2 {
       margin-bottom: 23px;
     }
@@ -843,6 +922,7 @@ footer {
     height: 400px;
     width: 200%;
     z-index: -1;
+    // opacity: 0.5;
   }
   .gradient_top {
     z-index: -1;
@@ -966,5 +1046,193 @@ footer {
   }
   @include tablet {
     margin-top: 51px;
+  }
+}
+
+// MARK: tariffs page
+main {
+  @include fluid("margin-top", 49);
+}
+body {
+  position: relative;
+}
+.tarrifs_page {
+  .tariffs_section {
+    h2 {
+      @include fluid("margin-bottom", 12);
+    }
+  }
+  //   отключаем стандартный градиент футера
+  .wrap_gradient {
+    display: none;
+  }
+}
+.tariffs_section {
+  .section_post_title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    @include fluid("width", 982);
+    @include fluid("margin-bottom", 36);
+  }
+}
+
+// MARK: comparison section
+.comparison_section {
+  @include fluid("margin-top", 100);
+  .wrap_section {
+    @include setupPaddingSection;
+    @include setupWrapSection;
+    @include fluid("max-width", 1000);
+  }
+  h2 {
+    @include fluid("margin-bottom", 36);
+  }
+  .comparioson_block {
+    li {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      @include fluid("height", 70);
+      font-weight: 700;
+      @include fz_22;
+      line-height: 110%;
+      letter-spacing: -0.02em;
+      img {
+        @include fluid("widht", 42);
+        @include fluid("height", 42);
+      }
+      & > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .param {
+        @include fluid("width", 343);
+        justify-content: flex-start;
+      }
+      .base {
+        flex: 1;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.4) 52.76%
+          ),
+          rgba(40, 86, 67, 0.4);
+      }
+      .premium {
+        flex: 1;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.4) 52.76%
+          ),
+          rgba(28, 52, 83, 0.4);
+      }
+      &.header_table {
+        border-bottom: none;
+        .base {
+          border-radius: 12px 0 0 0;
+          & > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px 0 0 12px;
+            background:
+              linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.25) 0%,
+                rgba(0, 0, 0, 0.25) 52.76%
+              ),
+              #285643;
+          }
+        }
+        .premium {
+          border-radius: 0 12px 0 0;
+          & > div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 0 12px 12px 0;
+            background:
+              linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.25) 0%,
+                rgba(0, 0, 0, 0.25) 52.76%
+              ),
+              #1c3453;
+          }
+        }
+      }
+      &:last-child {
+        border-bottom: none;
+        .base {
+          border-radius: 0 0 0 12px;
+        }
+        .premium {
+          border-radius: 0 0 12px 0;
+        }
+      }
+    }
+  }
+}
+
+// MARK: baner two section
+.baner_two_section {
+  @include fluid("margin-top", 100);
+  padding-left: 20px;
+  padding-right: 20px;
+  .wrap_section {
+    @include setupPaddingSection;
+    @include setupWrapSection;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    @include fluid("gap", 54);
+    @include fluid("padding-top", 24);
+    @include fluid("padding-bottom", 24);
+    @include fluid("padding-left", 21);
+    @include fluid("padding-right", 105);
+    border: 1px solid #285643;
+    @include fluid("border-radius", 36);
+    background: rgba(40, 86, 67, 0.15);
+  }
+  .col {
+    flex: 1;
+    &.img_col {
+      overflow: clip;
+      @include fluid("border-radius", 12);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    h2 {
+      font-weight: 400;
+      @include fz_48;
+      @include fluid("margin-bottom", 12);
+    }
+    .description {
+      font-weight: 500;
+      @include fz_18;
+      line-height: 110%;
+      letter-spacing: -0.02em;
+      p {
+        @include fluid("margin-bottom", 14);
+      }
+    }
   }
 }
