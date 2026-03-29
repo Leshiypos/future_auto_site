@@ -92,8 +92,8 @@ h2 {
   z-index: -1;
   width: 100%;
   overflow: hidden;
-  @include fluid("height", 1800);
-  @include fluid("width", 1800);
+  @include fluid("height", 1400);
+  @include fluid("width", 1400);
   overflow: clip;
   opacity: 0.7;
   .gradient {
@@ -1344,6 +1344,8 @@ body {
   @include tablet {
     padding: 0 23px 38px;
     margin-top: 102px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
     br {
       display: none;
     }
@@ -1502,6 +1504,158 @@ body {
     }
     @include tablet {
       margin-top: 23px;
+    }
+  }
+}
+
+// MARK: CONTACTS PAGE
+
+.contacts_page {
+  .wrap_gradient {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+  .header_page {
+    .btn_block {
+      @include fluid("margin-top", 30);
+      a {
+        margin-left: auto;
+        margin-right: auto;
+        @include tablet {
+          width: 100%;
+        }
+      }
+      @include tablet {
+        margin-top: 11px;
+      }
+    }
+  }
+}
+
+// MARK: contacts section
+.contacts_section {
+  @include fluid("margin-top", 80);
+  @include tablet {
+    margin-top: 51px;
+  }
+  .wrap_section {
+    @include setupPaddingSection;
+    @include setupWrapSection;
+    display: flex;
+    flex-flow: row nowrap;
+    @include fluid("gap", 32);
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+  h2 {
+    @include fluid("margin-bottom", 12);
+  }
+  h3 {
+    font-weight: 700;
+    @include fz_28;
+    letter-spacing: -0.04em;
+    @include fluid("margin-bottom", 12);
+    @include tablet {
+      margin-bottom: 10px;
+    }
+  }
+  .contacts_list {
+    display: flex;
+    flex-flow: column nowrap;
+    @include fluid("gap", 10);
+    li {
+      a {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        @include fluid("gap", 10);
+        font-weight: 700;
+        @include fz_20;
+        letter-spacing: -0.02em;
+        img {
+          @include fluid("width", 24);
+          @include tablet {
+            width: 23px;
+          }
+        }
+        @include tablet {
+          font-size: 16px;
+        }
+      }
+    }
+    @include tablet {
+      gap: 8px;
+    }
+  }
+  .socials_block {
+    a {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      @include fluid("gap", 10);
+      font-weight: 700;
+      @include fz_20;
+      letter-spacing: -0.02em;
+      img {
+        @include fluid("width", 24);
+        @include tablet {
+          width: 23px;
+        }
+      }
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+    @include tablet {
+      margin-top: 13px;
+    }
+  }
+  .legal_block {
+    .legal_text {
+      font-weight: 500;
+      @include fz_16;
+      line-height: 100%;
+      letter-spacing: -0.02em;
+      p {
+        @include fluid("margin-bottom", 10);
+        @include tablet {
+          margin-bottom: 4px;
+        }
+      }
+      span {
+        color: rgba(255, 255, 255, 0.65);
+      }
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+    @include tablet {
+      margin-top: 13px;
+    }
+  }
+
+  .col_content {
+    display: flex;
+    flex-flow: column nowrap;
+    @include fluid("gap", 40);
+    @include tablet {
+      gap: 10px;
+    }
+  }
+  .col_img {
+    @include fluid("width", 805);
+    @include fluid("border-radius", 36);
+    overflow: clip;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @include tablet {
+      width: 100%;
     }
   }
 }
