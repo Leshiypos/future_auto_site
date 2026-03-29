@@ -108,6 +108,8 @@ h2 {
     transform: translate(55%, 30%);
   }
   &.left {
+    right: unset;
+    left: 0;
     .gradient {
       transform: translate(-50%, 50%);
     }
@@ -1458,5 +1460,48 @@ body {
   }
   @include tablet {
     margin-top: 51px;
+  }
+}
+
+// Mark: GUARANTEE PAGE
+.guarantee_page {
+  // MARK: advantages section
+  .wrap_gradient {
+    display: none;
+  }
+  .advantages_section {
+    .wrap_section {
+      flex-flow: row wrap;
+    }
+    .advantage {
+      flex: 1 1 350px;
+      .wrap_advantage {
+        .features_list {
+          @include fluid("gap", 12);
+        }
+      }
+      .bg_wrap {
+        img {
+          @include tablet {
+            width: 160px;
+          }
+        }
+      }
+    }
+  }
+  .btn_block {
+    @include fluid("margin-top", 48);
+    padding-left: 20px;
+    padding-right: 20px;
+    a {
+      margin-left: auto;
+      margin-right: auto;
+      @include tablet {
+        width: 100%;
+      }
+    }
+    @include tablet {
+      margin-top: 23px;
+    }
   }
 }

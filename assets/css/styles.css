@@ -157,8 +157,8 @@ a {
   justify-content: center;
   width: fit-content;
   border-radius: 16px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 48px;
+  padding-right: 48px;
   height: 67px;
   box-shadow: 0 4px 0 0 #153b2b;
   transition: opacity 0.5s ease;
@@ -173,6 +173,18 @@ a {
   @media screen and (max-width: 1000px) {
     .btn {
       border-radius: 16px; } }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .btn {
+      padding-left: calc(100vw * (48 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .btn {
+      padding-left: 48px; } }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .btn {
+      padding-right: calc(100vw * (48 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .btn {
+      padding-right: 48px; } }
   @media screen and (min-width: 1001px) and (max-width: 1400px) {
     .btn {
       height: calc(100vw * (67 / 1400)); } }
@@ -192,7 +204,9 @@ a {
     .btn {
       font-size: 20px;
       height: 58px;
-      border-radius: 10px; } }
+      border-radius: 10px;
+      padding-left: 10px;
+      padding-right: 10px; } }
 
 header {
   position: fixed;
@@ -494,8 +508,11 @@ h2 {
     border-radius: 100%;
     background: radial-gradient(50% 50% at 50% 50%, #285643 0%, rgba(40, 86, 67, 0) 100%);
     transform: translate(55%, 30%); }
-  .wrap_gradient_bottom.left .gradient {
-    transform: translate(-50%, 50%); }
+  .wrap_gradient_bottom.left {
+    right: unset;
+    left: 0; }
+    .wrap_gradient_bottom.left .gradient {
+      transform: translate(-50%, 50%); }
   @media screen and (max-width: 1000px) {
     .wrap_gradient_bottom {
       display: none; } }
@@ -2422,5 +2439,42 @@ body {
   @media screen and (max-width: 1000px) {
     .steps_section {
       margin-top: 51px; } }
+
+.guarantee_page .wrap_gradient {
+  display: none; }
+.guarantee_page .advantages_section .wrap_section {
+  flex-flow: row wrap; }
+.guarantee_page .advantages_section .advantage {
+  flex: 1 1 350px; }
+  .guarantee_page .advantages_section .advantage .wrap_advantage .features_list {
+    gap: 12px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .guarantee_page .advantages_section .advantage .wrap_advantage .features_list {
+        gap: calc(100vw * (12 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .guarantee_page .advantages_section .advantage .wrap_advantage .features_list {
+        gap: 12px; } }
+  @media screen and (max-width: 1000px) {
+    .guarantee_page .advantages_section .advantage .bg_wrap img {
+      width: 160px; } }
+.guarantee_page .btn_block {
+  margin-top: 48px;
+  padding-left: 20px;
+  padding-right: 20px; }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .guarantee_page .btn_block {
+      margin-top: calc(100vw * (48 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .guarantee_page .btn_block {
+      margin-top: 48px; } }
+  .guarantee_page .btn_block a {
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (max-width: 1000px) {
+      .guarantee_page .btn_block a {
+        width: 100%; } }
+  @media screen and (max-width: 1000px) {
+    .guarantee_page .btn_block {
+      margin-top: 23px; } }
 
 /*# sourceMappingURL=styles.css.map */

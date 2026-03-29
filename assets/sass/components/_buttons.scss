@@ -4,8 +4,8 @@
   justify-content: center;
   width: fit-content;
   @include fluid("border-radius", 16);
-  padding-left: 10px;
-  padding-right: 10px;
+  @include fluid("padding-left", 48);
+  @include fluid("padding-right", 48);
   @include fluid("height", 67);
   box-shadow: 0 4px 0 0 #153b2b;
   transition: opacity 0.5s ease;
@@ -51,5 +51,7 @@
     font-size: 20px;
     height: 58px;
     border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
