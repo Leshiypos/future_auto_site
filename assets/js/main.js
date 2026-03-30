@@ -1,3 +1,18 @@
+// MARK: document load listener
+document.addEventListener("DOMContentLoaded", () => {
+  // Функция открытия popUp
+  openBlockInit();
+
+  //   Добавление класса к меню при скролле
+  addClassWhenScroll();
+
+  //   Открытие и закрытие выпадающих списков
+  dropDownBtn();
+
+  //   Подстановка значений в кнопку
+  insertChangeValueInput();
+});
+
 // MARK: Функция открытия попапов
 function openBlockInit() {
   document.addEventListener("click", (e) => {
@@ -68,11 +83,90 @@ function addClassWhenScroll() {
   window.addEventListener("scroll", toggleHeaderClass);
 }
 
-// MARK: document load listener
-document.addEventListener("DOMContentLoaded", () => {
-  // Функция открытия popUp
-  openBlockInit();
+function dropDownBtn() {
+  function closeAllDropdownMenus() {
+    const menus = document.querySelectorAll(".dropdown_menu.open");
+    if (!menus) return;
+    menus.forEach((menu) => {
+      menu.classList.remove("open");
+    });
+  }
+  window.addEventListener("scroll", () => {
+    closeAllDropdownMenus();
+  });
 
-  //   Добавление класса к меню при скролле
-  addClassWhenScroll();
-});
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".dropdown_menu")) closeAllDropdownMenus();
+
+    const btnTriger = e.target.closest("[data-dropdown-btn]");
+    if (!btnTriger) return;
+    const dropdownMenu = btnTriger.nextElementSibling;
+    if (!dropdownMenu) return;
+
+    dropdownMenu.classList.toggle("open");
+  });
+}
+
+// Поставновка выбранных значений в filter_toggle
+function insertChangeValueInput() {
+  document.addEventListener("change", (e) => {
+    const target = e.target;
+
+    if (!target.matches('input[type="checkbox"]')) return;
+
+    const filterBlock = target.closest(".filter_block");
+    if (!filterBlock) return;
+
+    const btnLabel = filterBlock.querySelector(".btn_label");
+    const defaultLabel = btnLabel.dataset.defaultLabel || "Тип двигателя";
+    const defaultInput = filterBlock.querySelector("input.default");
+    const allInputs = filterBlock.querySelectorAll('input[type="checkbox"]');
+
+    if (target.classList.contains("default") && target.checked) {
+      allInputs.forEach((input) => {
+        if (input !== target) input.checked = false;
+      });
+
+      btnLabel.textContent = "Любой";
+      return;
+    }
+
+    if (
+      !target.classList.contains("default") &&
+      target.checked &&
+      defaultInput
+    ) {
+      defaultInput.checked = false;
+    }
+
+    let checkedInputs = filterBlock.querySelectorAll(
+      'input[type="checkbox"]:checked',
+    );
+
+    if (!checkedInputs.length && defaultInput) {
+      defaultInput.checked = true;
+      btnLabel.textContent = "Любой";
+      return;
+    }
+
+    checkedInputs = filterBlock.querySelectorAll(
+      'input[type="checkbox"]:checked',
+    );
+
+    const isAll = [...checkedInputs].some((input) => input.value === "all");
+
+    if (isAll) {
+      btnLabel.textContent = "Любой";
+      return;
+    }
+
+    const values = [...checkedInputs]
+      .map((input) => {
+        const textEl = input.closest("label")?.querySelector(".label_text");
+        return textEl ? textEl.textContent.trim() : "";
+      })
+      .filter(Boolean);
+
+    btnLabel.textContent = values.length ? values.join(", ") : defaultLabel;
+  });
+}

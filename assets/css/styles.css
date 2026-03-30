@@ -510,8 +510,137 @@ header {
     letter-spacing: -0.02em;
     color: #fff; }
   .catalog_filters_form .dropdown_menu {
-    display: none; }
+    display: none;
+    position: absolute;
+    top: 120%;
+    z-index: 103;
+    font-weight: 500;
+    font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+    letter-spacing: -0.02em;
+    color: #fff;
+    padding: 6px 18px;
+    backdrop-filter: blur(20px);
+    background: rgba(14, 16, 15, 0.8);
+    border-radius: 12px;
+    min-width: 314px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .catalog_filters_form .dropdown_menu {
+        min-width: calc(100vw * (314 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .catalog_filters_form .dropdown_menu {
+        min-width: 314px; } }
+    .catalog_filters_form .dropdown_menu.open {
+      display: block; }
+    .catalog_filters_form .dropdown_menu .filter_list label {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 9px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #285643; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .dropdown_menu .filter_list label {
+          gap: calc(100vw * (9 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .dropdown_menu .filter_list label {
+          gap: 9px; } }
+      .catalog_filters_form .dropdown_menu .filter_list label input {
+        display: none; }
+      .catalog_filters_form .dropdown_menu .filter_list label img.radio_ckeck {
+        width: 20px;
+        height: 20px;
+        opacity: 0; }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .catalog_filters_form .dropdown_menu .filter_list label img.radio_ckeck {
+            width: calc(100vw * (20 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .catalog_filters_form .dropdown_menu .filter_list label img.radio_ckeck {
+            width: 20px; } }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .catalog_filters_form .dropdown_menu .filter_list label img.radio_ckeck {
+            height: calc(100vw * (20 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .catalog_filters_form .dropdown_menu .filter_list label img.radio_ckeck {
+            height: 20px; } }
+      .catalog_filters_form .dropdown_menu .filter_list label input:checked + img {
+        opacity: 1; }
+      .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox {
+        width: 24px;
+        height: 24px;
+        border-radius: 5px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #285643; }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox {
+            width: calc(100vw * (24 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox {
+            width: 24px; } }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox {
+            height: calc(100vw * (24 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox {
+            height: 24px; } }
+        @media screen and (min-width: 1001px) and (max-width: 1400px) {
+          .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox {
+            border-radius: calc(100vw * (5 / 1400)); } }
+        @media screen and (max-width: 1000px) {
+          .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox {
+            border-radius: 5px; } }
+        .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check {
+          width: 18px;
+          height: 18px;
+          border-radius: 4px;
+          background: #5ba77c;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: center;
+          display: none; }
+          @media screen and (min-width: 1001px) and (max-width: 1400px) {
+            .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check {
+              width: calc(100vw * (18 / 1400)); } }
+          @media screen and (max-width: 1000px) {
+            .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check {
+              width: 18px; } }
+          @media screen and (min-width: 1001px) and (max-width: 1400px) {
+            .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check {
+              height: calc(100vw * (18 / 1400)); } }
+          @media screen and (max-width: 1000px) {
+            .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check {
+              height: 18px; } }
+          @media screen and (min-width: 1001px) and (max-width: 1400px) {
+            .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check {
+              border-radius: calc(100vw * (4 / 1400)); } }
+          @media screen and (max-width: 1000px) {
+            .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check {
+              border-radius: 4px; } }
+          .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check img {
+            width: 10px;
+            height: 7px; }
+            @media screen and (min-width: 1001px) and (max-width: 1400px) {
+              .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check img {
+                width: calc(100vw * (10 / 1400)); } }
+            @media screen and (max-width: 1000px) {
+              .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check img {
+                width: 10px; } }
+            @media screen and (min-width: 1001px) and (max-width: 1400px) {
+              .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check img {
+                height: calc(100vw * (7 / 1400)); } }
+            @media screen and (max-width: 1000px) {
+              .catalog_filters_form .dropdown_menu .filter_list label .fake_checkbox .wrap_check img {
+                height: 7px; } }
+      .catalog_filters_form .dropdown_menu .filter_list label input:checked + .fake_checkbox .wrap_check {
+        display: flex; }
+    .catalog_filters_form .dropdown_menu .filter_list li:last-child label {
+      border-bottom: none; }
   .catalog_filters_form .filter_block {
+    position: relative;
     width: 100%;
     display: flex;
     height: 48px; }
@@ -602,6 +731,7 @@ header {
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;
+    cursor: pointer;
     background: linear-gradient(176deg, #204536 37.02%, #2c604b 56.25%, #204536 76.92%); }
     @media screen and (min-width: 1001px) and (max-width: 1400px) {
       .catalog_filters_form .form_submit_btn {

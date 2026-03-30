@@ -161,7 +161,7 @@
             >
               <!-- Filter block -->
               <div class="filter_block sort">
-                <button type="button" class="filter_toggle">
+                <button type="button" data-dropdown-btn class="filter_toggle">
                   <img src="./assets/images/icons/arrows.svg" alt="" />
                 </button>
                 <div class="dropdown_menu">
@@ -175,6 +175,11 @@
                           value="cheaper"
                           checked
                         />
+                        <img
+                          src="./assets/images/icons/check_filter.svg"
+                          alt="icon check"
+                          class="radio_ckeck"
+                        />
                         Дешевле</label
                       >
                     </li>
@@ -185,6 +190,11 @@
                           id="more_expensive"
                           name="sort"
                           value="more_expensive"
+                        />
+                        <img
+                          src="./assets/images/icons/check_filter.svg"
+                          alt="icon check"
+                          class="radio_ckeck"
                         />
                         Дороже</label
                       >
@@ -197,6 +207,11 @@
                           name="sort"
                           value="by_name"
                         />
+                        <img
+                          src="./assets/images/icons/check_filter.svg"
+                          alt="icon check"
+                          class="radio_ckeck"
+                        />
                         По названию</label
                       >
                     </li>
@@ -206,7 +221,12 @@
 
               <!-- Filter block -->
               <div class="filter_block">
-                <button type="button" class="filter_toggle">
+                <button
+                  type="button"
+                  class="filter_toggle"
+                  data-dropdown-btn
+                  data-default-label="Тип двигателя"
+                >
                   <div class="btn_label">Тип двигателя</div>
                   <svg
                     width="24"
@@ -233,9 +253,19 @@
                           type="checkbox"
                           name="engine[]"
                           value="all"
+                          class="default"
                           checked
                         />
-                        Любой</label
+                        <div class="fake_checkbox">
+                          <div class="wrap_check">
+                            <img
+                              src="./assets/images/icons/check_black.svg"
+                              alt="check icon"
+                            />
+                          </div>
+                        </div>
+
+                        <span class="label_text">Любой</span></label
                       >
                     </li>
                     <li class="filter_item">
@@ -246,7 +276,15 @@
                           name="engine[]"
                           value="EV"
                         />
-                        EV</label
+                        <div class="fake_checkbox">
+                          <div class="wrap_check">
+                            <img
+                              src="./assets/images/icons/check_black.svg"
+                              alt="check icon"
+                            />
+                          </div>
+                        </div>
+                        <span class="label_text">EV</span></label
                       >
                     </li>
                     <li class="filter_item">
@@ -257,7 +295,15 @@
                           name="engine[]"
                           value="hybrid"
                         />
-                        Гибрид</label
+                        <div class="fake_checkbox">
+                          <div class="wrap_check">
+                            <img
+                              src="./assets/images/icons/check_black.svg"
+                              alt="check icon"
+                            />
+                          </div>
+                        </div>
+                        <span class="label_text">Гибрид</span></label
                       >
                     </li>
                     <li class="filter_item">
@@ -268,7 +314,15 @@
                           name="engine[]"
                           value="petrol"
                         />
-                        Бензин</label
+                        <div class="fake_checkbox">
+                          <div class="wrap_check">
+                            <img
+                              src="./assets/images/icons/check_black.svg"
+                              alt="check icon"
+                            />
+                          </div>
+                        </div>
+                        <span class="label_text">Бензин</span></label
                       >
                     </li>
                   </ul>
@@ -277,7 +331,12 @@
 
               <!-- Filter block -->
               <div class="filter_block">
-                <button type="button" class="filter_toggle">
+                <button
+                  type="button"
+                  class="filter_toggle"
+                  data-dropdown-btn
+                  data-default-label="Класс"
+                >
                   <div class="btn_label">Класс</div>
                   <svg
                     width="24"
@@ -304,9 +363,19 @@
                           type="checkbox"
                           name="class[]"
                           value="all"
+                          class="default"
                           checked
                         />
-                        Любой</label
+                        <div class="fake_checkbox">
+                          <div class="wrap_check">
+                            <img
+                              src="./assets/images/icons/check_black.svg"
+                              alt="check icon"
+                            />
+                          </div>
+                        </div>
+
+                        <span class="label_text">Любой</span></label
                       >
                     </li>
                     <li class="filter_item">
@@ -317,7 +386,15 @@
                           name="class[]"
                           value="SUV"
                         />
-                        SUV</label
+                        <div class="fake_checkbox">
+                          <div class="wrap_check">
+                            <img
+                              src="./assets/images/icons/check_black.svg"
+                              alt="check icon"
+                            />
+                          </div>
+                        </div>
+                        <span class="label_text">SUV</span></label
                       >
                     </li>
                     <li class="filter_item">
@@ -328,7 +405,15 @@
                           name="class[]"
                           value="sedan"
                         />
-                        Судан</label
+                        <div class="fake_checkbox">
+                          <div class="wrap_check">
+                            <img
+                              src="./assets/images/icons/check_black.svg"
+                              alt="check icon"
+                            />
+                          </div>
+                        </div>
+                        <span class="label_text">Сeдан</span></label
                       >
                     </li>
                     <li class="filter_item">
@@ -339,7 +424,15 @@
                           name="class[]"
                           value="minivan"
                         />
-                        Минивен</label
+                        <div class="fake_checkbox">
+                          <div class="wrap_check">
+                            <img
+                              src="./assets/images/icons/check_black.svg"
+                              alt="check icon"
+                            />
+                          </div>
+                        </div>
+                        <span class="label_text">Минивен</span></label
                       >
                     </li>
                   </ul>

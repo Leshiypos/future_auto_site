@@ -232,8 +232,88 @@ header {
   }
   .dropdown_menu {
     display: none;
+    position: absolute;
+    top: 120%;
+    z-index: 103;
+    font-weight: 500;
+    @include fz_18;
+    letter-spacing: -0.02em;
+    color: #fff;
+    padding: 6px 18px;
+    backdrop-filter: blur(20px);
+    background: rgba(14, 16, 15, 0.8);
+    border-radius: 12px;
+    @include fluid("min-width", 314);
+    &.open {
+      display: block;
+    }
+    .filter_list {
+      label {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        @include fluid("gap", 9);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #285643;
+
+        input {
+          display: none;
+        }
+
+        img.radio_ckeck {
+          @include fluid("width", 20);
+          @include fluid("height", 20);
+          opacity: 0;
+          //   display: none;
+        }
+        input:checked + img {
+          opacity: 1;
+        }
+        // fake checkbox
+        .fake_checkbox {
+          @include fluid("width", 24);
+          @include fluid("height", 24);
+          @include fluid("border-radius", 5);
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $accent_color;
+          .wrap_check {
+            @include fluid("width", 18);
+            @include fluid("height", 18);
+            @include fluid("border-radius", 4);
+            background: #5ba77c;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            img {
+              @include fluid("width", 10);
+              @include fluid("height", 7);
+            }
+            display: none;
+          }
+        }
+        input:checked + .fake_checkbox {
+          .wrap_check {
+            display: flex;
+          }
+        }
+      }
+      li {
+        &:last-child {
+          label {
+            border-bottom: none;
+          }
+        }
+      }
+    }
   }
+
   .filter_block {
+    position: relative;
     width: 100%;
     display: flex;
     @include fluid("height", 48);
@@ -310,6 +390,7 @@ header {
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;
+    cursor: pointer;
     background: linear-gradient(
       176deg,
       rgba(32, 69, 54, 1) 37.02%,
