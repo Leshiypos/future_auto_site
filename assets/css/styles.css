@@ -488,12 +488,100 @@ header {
       color: white;
       background: #285643; }
 
+.filter_wrap {
+  margin-bottom: 48px; }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .filter_wrap {
+      margin-bottom: calc(100vw * (48 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .filter_wrap {
+      margin-bottom: 48px; } }
+  .filter_wrap .tags_block {
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 41px;
+    gap: 10px;
+    font-weight: 700;
+    font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
+    letter-spacing: -0.02em;
+    color: #5ba77c; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .filter_wrap .tags_block {
+        min-height: calc(100vw * (41 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .filter_wrap .tags_block {
+        min-height: 41px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .filter_wrap .tags_block {
+        gap: calc(100vw * (10 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .filter_wrap .tags_block {
+        gap: 10px; } }
+    .filter_wrap .tags_block .single_tag {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: fit-content;
+      gap: 11px;
+      padding-left: 14px;
+      padding-right: 14px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      background: rgba(91, 167, 124, 0.25);
+      border-radius: 24px; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .filter_wrap .tags_block .single_tag {
+          gap: calc(100vw * (11 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .filter_wrap .tags_block .single_tag {
+          gap: 11px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .filter_wrap .tags_block .single_tag {
+          padding-left: calc(100vw * (14 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .filter_wrap .tags_block .single_tag {
+          padding-left: 14px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .filter_wrap .tags_block .single_tag {
+          padding-right: calc(100vw * (14 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .filter_wrap .tags_block .single_tag {
+          padding-right: 14px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .filter_wrap .tags_block .single_tag {
+          padding-top: calc(100vw * (8 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .filter_wrap .tags_block .single_tag {
+          padding-top: 8px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .filter_wrap .tags_block .single_tag {
+          padding-bottom: calc(100vw * (8 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .filter_wrap .tags_block .single_tag {
+          padding-bottom: 8px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .filter_wrap .tags_block .single_tag {
+          border-radius: calc(100vw * (24 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .filter_wrap .tags_block .single_tag {
+          border-radius: 24px; } }
+      .filter_wrap .tags_block .single_tag .tag_remove_btn {
+        cursor: pointer;
+        background: none;
+        border: none; }
+
 .catalog_filters_form {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   gap: 24px;
   margin-bottom: 15px; }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .catalog_filters_form {
+      gap: calc(100vw * (24 / 1400)); } }
+  @media screen and (max-width: 1000px) {
+    .catalog_filters_form {
+      gap: 24px; } }
   @media screen and (min-width: 1001px) and (max-width: 1400px) {
     .catalog_filters_form {
       margin-bottom: calc(100vw * (15 / 1400)); } }
@@ -505,8 +593,7 @@ header {
     outline: none;
     border: none;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 110%;
+    font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
     letter-spacing: -0.02em;
     color: #fff; }
   .catalog_filters_form .dropdown_menu {
@@ -518,11 +605,44 @@ header {
     font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
     letter-spacing: -0.02em;
     color: #fff;
-    padding: 6px 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 18px;
+    padding-right: 18px;
     backdrop-filter: blur(20px);
     background: rgba(14, 16, 15, 0.8);
     border-radius: 12px;
     min-width: 314px; }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .catalog_filters_form .dropdown_menu {
+        padding-top: calc(100vw * (6 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .catalog_filters_form .dropdown_menu {
+        padding-top: 6px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .catalog_filters_form .dropdown_menu {
+        padding-bottom: calc(100vw * (6 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .catalog_filters_form .dropdown_menu {
+        padding-bottom: 6px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .catalog_filters_form .dropdown_menu {
+        padding-left: calc(100vw * (18 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .catalog_filters_form .dropdown_menu {
+        padding-left: 18px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .catalog_filters_form .dropdown_menu {
+        padding-right: calc(100vw * (18 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .catalog_filters_form .dropdown_menu {
+        padding-right: 18px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .catalog_filters_form .dropdown_menu {
+        border-radius: calc(100vw * (12 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .catalog_filters_form .dropdown_menu {
+        border-radius: 12px; } }
     @media screen and (min-width: 1001px) and (max-width: 1400px) {
       .catalog_filters_form .dropdown_menu {
         min-width: calc(100vw * (314 / 1400)); } }
@@ -532,19 +652,31 @@ header {
     .catalog_filters_form .dropdown_menu.open {
       display: block; }
     .catalog_filters_form .dropdown_menu .filter_list label {
+      cursor: pointer;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
       gap: 9px;
       padding-top: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #285643; }
+      padding-bottom: 10px; }
       @media screen and (min-width: 1001px) and (max-width: 1400px) {
         .catalog_filters_form .dropdown_menu .filter_list label {
           gap: calc(100vw * (9 / 1400)); } }
       @media screen and (max-width: 1000px) {
         .catalog_filters_form .dropdown_menu .filter_list label {
           gap: 9px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .dropdown_menu .filter_list label {
+          padding-top: calc(100vw * (10 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .dropdown_menu .filter_list label {
+          padding-top: 10px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .dropdown_menu .filter_list label {
+          padding-bottom: calc(100vw * (10 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .dropdown_menu .filter_list label {
+          padding-bottom: 10px; } }
       .catalog_filters_form .dropdown_menu .filter_list label input {
         display: none; }
       .catalog_filters_form .dropdown_menu .filter_list label img.radio_ckeck {
@@ -637,6 +769,8 @@ header {
                 height: 7px; } }
       .catalog_filters_form .dropdown_menu .filter_list label input:checked + .fake_checkbox .wrap_check {
         display: flex; }
+    .catalog_filters_form .dropdown_menu .filter_list li:first-child label {
+      border-bottom: 1px solid #285643; }
     .catalog_filters_form .dropdown_menu .filter_list li:last-child label {
       border-bottom: none; }
   .catalog_filters_form .filter_block {
@@ -672,20 +806,55 @@ header {
         @media screen and (max-width: 1000px) {
           .catalog_filters_form .filter_block.sort .filter_toggle {
             height: 48px; } }
+      .catalog_filters_form .filter_block.sort .filter_list label {
+        border-bottom: 1px solid #285643; }
     .catalog_filters_form .filter_block .filter_toggle {
       cursor: pointer;
       width: 100%;
       border-radius: 12px;
-      padding: 12px 18px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 18px;
+      padding-right: 18px;
       background: rgba(40, 86, 67, 0.15);
       border: 1px solid #285643;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
       justify-content: space-between; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          border-radius: calc(100vw * (12 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          border-radius: 12px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          padding-top: calc(100vw * (12 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          padding-top: 12px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          padding-bottom: calc(100vw * (12 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          padding-bottom: 12px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          padding-left: calc(100vw * (18 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          padding-left: 18px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          padding-right: calc(100vw * (18 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block .filter_toggle {
+          padding-right: 18px; } }
       .catalog_filters_form .filter_block .filter_toggle .btn_label {
         font-weight: 500;
-        font-size: 18px;
+        font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
         line-height: 110%;
         letter-spacing: -0.02em;
         color: rgba(255, 255, 255, 0.65); }
@@ -701,17 +870,50 @@ header {
     .catalog_filters_form .filter_block_price .wrap_block_price {
       height: 100%;
       border-radius: 12px;
-      padding: 12px 18px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 18px;
+      padding-right: 18px;
       background: rgba(40, 86, 67, 0.15);
       border: 1px solid #285643;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
       justify-content: space-between; }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          border-radius: calc(100vw * (12 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          border-radius: 12px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          padding-top: calc(100vw * (12 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          padding-top: 12px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          padding-bottom: calc(100vw * (12 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          padding-bottom: 12px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          padding-left: calc(100vw * (18 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          padding-left: 18px; } }
+      @media screen and (min-width: 1001px) and (max-width: 1400px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          padding-right: calc(100vw * (18 / 1400)); } }
+      @media screen and (max-width: 1000px) {
+        .catalog_filters_form .filter_block_price .wrap_block_price {
+          padding-right: 18px; } }
       .catalog_filters_form .filter_block_price .wrap_block_price .col {
         flex: 1;
         font-weight: 500;
-        font-size: 18px;
+        font-size: clamp(12.6px, calc( 12.6px + (18 - 12.6) * ((100vw - 1000px) / (1400 - 1000)) ), 18px);
         letter-spacing: -0.02em;
         color: rgba(255, 255, 255, 0.65); }
         .catalog_filters_form .filter_block_price .wrap_block_price .col input {
@@ -727,7 +929,7 @@ header {
     border-radius: 16px;
     border: none;
     font-weight: 700;
-    font-size: 20px;
+    font-size: clamp(14px, calc( 14px + (20 - 14) * ((100vw - 1000px) / (1400 - 1000)) ), 20px);
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;
@@ -739,6 +941,12 @@ header {
     @media screen and (max-width: 1000px) {
       .catalog_filters_form .form_submit_btn {
         height: 48px; } }
+    @media screen and (min-width: 1001px) and (max-width: 1400px) {
+      .catalog_filters_form .form_submit_btn {
+        border-radius: calc(100vw * (16 / 1400)); } }
+    @media screen and (max-width: 1000px) {
+      .catalog_filters_form .form_submit_btn {
+        border-radius: 16px; } }
 
 h1 {
   font-family: "Micra", sans-serif;

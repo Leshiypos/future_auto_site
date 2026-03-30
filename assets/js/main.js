@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //   Подстановка значений в кнопку
   insertChangeValueInput();
+
+  //   Добавление быстрых тэгов
+  toggleTagsInitFilter();
 });
 
 // MARK: Функция открытия попапов
@@ -86,24 +89,37 @@ function addClassWhenScroll() {
 function dropDownBtn() {
   function closeAllDropdownMenus() {
     const menus = document.querySelectorAll(".dropdown_menu.open");
-    if (!menus) return;
     menus.forEach((menu) => {
       menu.classList.remove("open");
     });
   }
-  window.addEventListener("scroll", () => {
-    closeAllDropdownMenus();
-  });
+
+  window.addEventListener("scroll", closeAllDropdownMenus);
 
   document.addEventListener("click", (e) => {
-    if (!e.target.closest(".dropdown_menu")) closeAllDropdownMenus();
+    const btnTrigger = e.target.closest("[data-dropdown-btn]");
+    const clickedMenu = e.target.closest(".dropdown_menu");
 
-    const btnTriger = e.target.closest("[data-dropdown-btn]");
-    if (!btnTriger) return;
-    const dropdownMenu = btnTriger.nextElementSibling;
-    if (!dropdownMenu) return;
+    // клик вне кнопки и вне меню — закрыть все
+    if (!btnTrigger && !clickedMenu) {
+      closeAllDropdownMenus();
+      return;
+    }
 
-    dropdownMenu.classList.toggle("open");
+    // если клик не по кнопке — дальше ничего не делаем
+    if (!btnTrigger) return;
+
+    const dropdownMenu = btnTrigger.nextElementSibling;
+    if (!dropdownMenu || !dropdownMenu.classList.contains("dropdown_menu"))
+      return;
+
+    const isOpen = dropdownMenu.classList.contains("open");
+
+    closeAllDropdownMenus();
+
+    if (!isOpen) {
+      dropdownMenu.classList.add("open");
+    }
   });
 }
 
@@ -168,5 +184,137 @@ function insertChangeValueInput() {
       .filter(Boolean);
 
     btnLabel.textContent = values.length ? values.join(", ") : defaultLabel;
+  });
+}
+
+// MARK:  Добавление быстрых тэгов
+// MARK: Добавление быстрых тегов
+function toggleTagsInitFilter() {
+  const tagsBlock = document.getElementById("tag_block");
+  if (!tagsBlock) return;
+
+  function createTag(text, inputId) {
+    const tag = document.createElement("div");
+    tag.className = "single_tag";
+    tag.dataset.inputid = inputId;
+
+    tag.innerHTML = `
+      <span class="text_tag">${text}</span>
+      <button type="button" data-inputid="${inputId}" class="tag_remove_btn">
+        <img src="./assets/images/icons/tag_cross_btn.svg" alt="btn remove" />
+      </button>
+    `;
+
+    return tag;
+  }
+
+  function getTagByInputId(inputId) {
+    return tagsBlock.querySelector(`.single_tag[data-inputid="${inputId}"]`);
+  }
+
+  function removeTag(inputId) {
+    const tag = getTagByInputId(inputId);
+    if (tag) tag.remove();
+  }
+
+  function addTag(input) {
+    const inputId = input.id;
+    if (!inputId) return;
+
+    if (input.classList.contains("default")) return;
+
+    const alreadyExists = getTagByInputId(inputId);
+    if (alreadyExists) return;
+
+    const labelText = input.closest("label")?.querySelector(".label_text");
+    const text = labelText?.textContent?.trim();
+
+    if (!text) return;
+
+    tagsBlock.append(createTag(text, inputId));
+  }
+
+  function getGroupInputs(input) {
+    const name = input.name;
+    if (!name) return [];
+    return [...document.querySelectorAll(`input[name="${name}"]`)];
+  }
+
+  function getDefaultInput(inputs) {
+    return inputs.find((item) => item.classList.contains("default"));
+  }
+
+  function getCheckedNotDefault(inputs) {
+    return inputs.filter(
+      (item) => item.checked && !item.classList.contains("default"),
+    );
+  }
+
+  document.addEventListener("change", (e) => {
+    const input = e.target;
+    if (!(input instanceof HTMLInputElement)) return;
+    if (!input.matches('input[type="checkbox"]')) return;
+    if (!input.closest(".filter_block")) return;
+
+    const groupInputs = getGroupInputs(input);
+    const defaultInput = getDefaultInput(groupInputs);
+
+    // Если выбрали "Любой"
+    if (input.classList.contains("default")) {
+      if (input.checked) {
+        groupInputs.forEach((item) => {
+          if (item !== input) {
+            item.checked = false;
+            removeTag(item.id);
+          }
+        });
+      } else {
+        // Не даем снять "Любой", если ничего больше не выбрано
+        const checkedNotDefault = getCheckedNotDefault(groupInputs);
+        if (checkedNotDefault.length === 0) {
+          input.checked = true;
+        }
+      }
+
+      return;
+    }
+
+    // Если выбрали не default
+    if (input.checked) {
+      addTag(input);
+
+      if (defaultInput) {
+        defaultInput.checked = false;
+      }
+    } else {
+      removeTag(input.id);
+
+      const checkedNotDefault = getCheckedNotDefault(groupInputs);
+      if (checkedNotDefault.length === 0 && defaultInput) {
+        defaultInput.checked = true;
+      }
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".tag_remove_btn");
+    if (!btn) return;
+
+    const inputId = btn.dataset.inputid;
+    if (!inputId) return;
+
+    const input = document.getElementById(inputId);
+    if (!(input instanceof HTMLInputElement)) return;
+
+    input.checked = false;
+    removeTag(inputId);
+
+    const groupInputs = getGroupInputs(input);
+    const defaultInput = getDefaultInput(groupInputs);
+    const checkedNotDefault = getCheckedNotDefault(groupInputs);
+
+    if (checkedNotDefault.length === 0 && defaultInput) {
+      defaultInput.checked = true;
+    }
   });
 }

@@ -213,20 +213,51 @@ header {
   }
 }
 
-// filter catalog
+//MARK:  filter catalog
+.filter_wrap {
+  @include fluid("margin-bottom", 48);
+  //   Tags block
+  .tags_block {
+    display: flex;
+    flex-flow: row wrap;
+    @include fluid("min-height", 41);
+    @include fluid("gap", 10);
+    font-weight: 700;
+    @include fz_18;
+    letter-spacing: -0.02em;
+    color: #5ba77c;
+    .single_tag {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: fit-content;
+      @include fluid("gap", 11);
+      @include fluid("padding-left", 14);
+      @include fluid("padding-right", 14);
+      @include fluid("padding-top", 8);
+      @include fluid("padding-bottom", 8);
+      background: rgba(91, 167, 124, 0.25);
+      @include fluid("border-radius", 24);
+      .tag_remove_btn {
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+    }
+  }
+}
 .catalog_filters_form {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  gap: 24px;
+  @include fluid("gap", 24);
   @include fluid("margin-bottom", 15);
   input[type="text"] {
     background: none;
     outline: none;
     border: none;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 110%;
+    @include fz_18;
     letter-spacing: -0.02em;
     color: #fff;
   }
@@ -239,23 +270,26 @@ header {
     @include fz_18;
     letter-spacing: -0.02em;
     color: #fff;
-    padding: 6px 18px;
+    @include fluid("padding-top", 6);
+    @include fluid("padding-bottom", 6);
+    @include fluid("padding-left", 18);
+    @include fluid("padding-right", 18);
     backdrop-filter: blur(20px);
     background: rgba(14, 16, 15, 0.8);
-    border-radius: 12px;
+    @include fluid("border-radius", 12);
     @include fluid("min-width", 314);
     &.open {
       display: block;
     }
     .filter_list {
       label {
+        cursor: pointer;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         @include fluid("gap", 9);
-        padding-top: 10px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #285643;
+        @include fluid("padding-top", 10);
+        @include fluid("padding-bottom", 10);
 
         input {
           display: none;
@@ -303,6 +337,11 @@ header {
         }
       }
       li {
+        &:first-child {
+          label {
+            border-bottom: 1px solid #285643;
+          }
+        }
         &:last-child {
           label {
             border-bottom: none;
@@ -328,12 +367,20 @@ header {
         justify-content: center;
         align-items: center;
       }
+      .filter_list {
+        label {
+          border-bottom: 1px solid #285643;
+        }
+      }
     }
     .filter_toggle {
       cursor: pointer;
       width: 100%;
-      border-radius: 12px;
-      padding: 12px 18px;
+      @include fluid("border-radius", 12);
+      @include fluid("padding-top", 12);
+      @include fluid("padding-bottom", 12);
+      @include fluid("padding-left", 18);
+      @include fluid("padding-right", 18);
       background: rgba(40, 86, 67, 0.15);
       border: 1px solid $accent_color;
       display: flex;
@@ -342,7 +389,7 @@ header {
       justify-content: space-between;
       .btn_label {
         font-weight: 500;
-        font-size: 18px;
+        @include fz_18;
         line-height: 110%;
         letter-spacing: -0.02em;
         color: rgba(255, 255, 255, 0.65);
@@ -354,8 +401,11 @@ header {
     @include fluid("height", 48);
     .wrap_block_price {
       height: 100%;
-      border-radius: 12px;
-      padding: 12px 18px;
+      @include fluid("border-radius", 12);
+      @include fluid("padding-top", 12);
+      @include fluid("padding-bottom", 12);
+      @include fluid("padding-left", 18);
+      @include fluid("padding-right", 18);
       background: rgba(40, 86, 67, 0.15);
       border: 1px solid $accent_color;
       display: flex;
@@ -372,7 +422,7 @@ header {
           color: #fff;
         }
         font-weight: 500;
-        font-size: 18px;
+        @include fz_18;
         letter-spacing: -0.02em;
         color: rgba(255, 255, 255, 0.65);
       }
@@ -383,10 +433,10 @@ header {
     @include fluid("height", 48);
     display: flex;
     flex-flow: row nowrap;
-    border-radius: 16px;
+    @include fluid("border-radius", 16);
     border: none;
     font-weight: 700;
-    font-size: 20px;
+    @include fz_20;
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;
