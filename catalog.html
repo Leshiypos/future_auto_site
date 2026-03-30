@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/fonts/micra/stylesheet.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+
+    <script src="./assets/js/sliders.js"></script>
+
+    <title>Future auto</title>
+  </head>
+  <body class="page catalog_page">
+    <!-- MARK: Мобильное меню -->
+    <div class="wrap_menu_mobile" data-block-closable="mobile_menu">
+      <nav class="mobile_menu">
+        <ul>
+          <li><a href="/catalog.html">Каталог</a></li>
+          <li><a href="/tariffs.html">Пакеты</a></li>
+          <li><a href="/process.html">Как мы работаем</a></li>
+          <li><a href="/guarantees.html">Гарантии</a></li>
+          <li><a href="/contacts.html">Контакты</a></li>
+          <li><a href="/clients.html">Клиенты</a></li>
+        </ul>
+      </nav>
+      <div class="socials_block">
+        <ul>
+          <li>
+            <a href="tel:+375441232455">
+              <img
+                src="./assets/images/icons/phone_mob_menu.svg"
+                alt="phone icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:mail@mail.com">
+              <img
+                src="./assets/images/icons/mail_mob_menu.svg"
+                alt="mail icon"
+              />
+            </a>
+          </li>
+
+          <li>
+            <a href="#"
+              ><img src="./assets/images/icons/viber_mob_menu.svg" alt="viber"
+            /></a>
+          </li>
+
+          <li>
+            <a href="#">
+              <img
+                src="./assets/images/icons/whatsapp_mob_menu.svg"
+                alt="whatsapp icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="./assets/images/icons/telegram_mob_menu.svg"
+                alt="telegram icon"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="./assets/images/icons/inst_mob_menu.svg"
+                alt="instagram icon"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <header>
+      <div class="menu_desktop">
+        <!-- Логотип -->
+        <a href="/" class="logo">
+          <img src="./assets/images/logo.avif" alt="Future Auto логотип" />
+        </a>
+
+        <!-- Навигация -->
+        <nav class="main_menu">
+          <ul>
+            <li><a href="/catalog.html">Каталог</a></li>
+            <li><a href="/tariffs.html">Пакеты</a></li>
+            <li><a href="/process.html">Как мы работаем</a></li>
+            <li><a href="/guarantees.html">Гарантии</a></li>
+            <li><a href="/contacts.html">Контакты</a></li>
+            <li><a href="/clients.html">Клиенты</a></li>
+          </ul>
+        </nav>
+        <div class="contacts_block">
+          <img src="./assets/images/icons/phone.svg" alt="" />
+          <a href="tel:+375441233455" title="Контакт">+375 44 123 24 55</a>
+        </div>
+        <div class="socials_block">
+          <ul>
+            <li>
+              <a href="#"
+                ><img src="./assets/images/icons/viber.svg" alt="viber"
+              /></a>
+            </li>
+
+            <li class="desktop">
+              <a href="tel:+37544123345">
+                <img
+                  src="./assets/images/icons/36x36_whatsapp.svg"
+                  alt="whatsapp icon"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img
+                  src="./assets/images/icons/36x36_telegram.svg"
+                  alt="telegram icon"
+                />
+              </a>
+            </li>
+            <li class="mobile">
+              <a href="#">
+                <img
+                  src="./assets/images/icons/phone_mobile.svg"
+                  alt="phone icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="burger_btn mobile" data-btn-open="mobile_menu">
+          <img src="./assets/images/icons/burger.svg" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- MARK: Catalog section -->
+      <section class="catalog_general_section">
+        <div class="wrap_section">
+          <h2 class="text_center">Каталог</h2>
+          <div class="filter_block">
+            <form
+              id="catalog_filters_form"
+              class="catalog_filters_form"
+              method="GET"
+            >
+              <!-- Filter block -->
+              <div class="filter_block sort">
+                <button type="button" class="filter_toggle">
+                  <img src="./assets/images/icons/arrows.svg" alt="" />
+                </button>
+                <div class="dropdown_menu">
+                  <ul class="filter_list">
+                    <li class="filter_item">
+                      <label for="cheaper">
+                        <input
+                          type="radio"
+                          id="cheaper"
+                          name="sort"
+                          value="cheaper"
+                          checked
+                        />
+                        Дешевле</label
+                      >
+                    </li>
+                    <li class="filter_item">
+                      <label for="more_expensive">
+                        <input
+                          type="radio"
+                          id="more_expensive"
+                          name="sort"
+                          value="more_expensive"
+                        />
+                        Дороже</label
+                      >
+                    </li>
+                    <li class="filter_item">
+                      <label for="by_name">
+                        <input
+                          type="radio"
+                          id="by_name"
+                          name="sort"
+                          value="by_name"
+                        />
+                        По названию</label
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Filter block -->
+              <div class="filter_block">
+                <button type="button" class="filter_toggle">
+                  <div class="btn_label">Тип двигателя</div>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 9L12 14L7 9"
+                      stroke="white"
+                      stroke-opacity="0.65"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div class="dropdown_menu">
+                  <ul class="filter_list">
+                    <li class="filter_item">
+                      <label for="all_engine">
+                        <input
+                          id="all_engine"
+                          type="checkbox"
+                          name="engine[]"
+                          value="all"
+                          checked
+                        />
+                        Любой</label
+                      >
+                    </li>
+                    <li class="filter_item">
+                      <label for="ev_engine">
+                        <input
+                          id="ev_engine"
+                          type="checkbox"
+                          name="engine[]"
+                          value="EV"
+                        />
+                        EV</label
+                      >
+                    </li>
+                    <li class="filter_item">
+                      <label for="hybrid_engine">
+                        <input
+                          id="hybrid_engine"
+                          type="checkbox"
+                          name="engine[]"
+                          value="hybrid"
+                        />
+                        Гибрид</label
+                      >
+                    </li>
+                    <li class="filter_item">
+                      <label for="petrol_engine">
+                        <input
+                          id="petrol_engine"
+                          type="checkbox"
+                          name="engine[]"
+                          value="petrol"
+                        />
+                        Бензин</label
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Filter block -->
+              <div class="filter_block">
+                <button type="button" class="filter_toggle">
+                  <div class="btn_label">Класс</div>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 9L12 14L7 9"
+                      stroke="white"
+                      stroke-opacity="0.65"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div class="dropdown_menu">
+                  <ul class="filter_list">
+                    <li class="filter_item">
+                      <label for="all_class">
+                        <input
+                          id="all_class"
+                          type="checkbox"
+                          name="class[]"
+                          value="all"
+                          checked
+                        />
+                        Любой</label
+                      >
+                    </li>
+                    <li class="filter_item">
+                      <label for="suv_class">
+                        <input
+                          id="suv_class"
+                          type="checkbox"
+                          name="class[]"
+                          value="SUV"
+                        />
+                        SUV</label
+                      >
+                    </li>
+                    <li class="filter_item">
+                      <label for="sedan_class">
+                        <input
+                          id="sedan_class"
+                          type="checkbox"
+                          name="class[]"
+                          value="sedan"
+                        />
+                        Судан</label
+                      >
+                    </li>
+                    <li class="filter_item">
+                      <label for="minivan_class">
+                        <input
+                          id="minivan_class"
+                          type="checkbox"
+                          name="class[]"
+                          value="minivan"
+                        />
+                        Минивен</label
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="filter_block_price">
+                <div class="wrap_block_price">
+                  <div class="col label">Цена от</div>
+                  <div class="col input_field">
+                    <input
+                      type="text"
+                      name="price"
+                      id="price"
+                      placeholder="200 000 $"
+                    />
+                  </div>
+                </div>
+              </div>
+              <input type="submit" value="Найти" class="form_submit_btn" />
+            </form>
+          </div>
+          <div class="models_block">
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_1.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Avatr 07 Hybrid</h3>
+                <div class="characteristic_block"><span>Тип</span> Гибрид</div>
+                <div class="characteristic_block"><span>Класс</span> Седан</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 35 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_2.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Denza D9 DM-i</h3>
+                <div class="characteristic_block"><span>Тип</span> EV</div>
+                <div class="characteristic_block"><span>Класс</span> SUV</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 45 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_3.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Zeekr 007 GT</h3>
+                <div class="characteristic_block"><span>Тип</span> Гибрид</div>
+                <div class="characteristic_block"><span>Класс</span> Седан</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 125 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_4.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Changan Qiyuan Q07 DM-i</h3>
+                <div class="characteristic_block"><span>Тип</span> Бензин</div>
+                <div class="characteristic_block"><span>Класс</span> MPV</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 35 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_5.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Avatr 07 Hybrid</h3>
+                <div class="characteristic_block"><span>Тип</span> EV</div>
+                <div class="characteristic_block"><span>Класс</span> SUV</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 113 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_6.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>BYD Seal 07 Dm-i DM-i 1.5 CVT 125KM</h3>
+                <div class="characteristic_block"><span>Тип</span> Гибрид</div>
+                <div class="characteristic_block"><span>Класс</span> SUV</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 85 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_7.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Li L7</h3>
+                <div class="characteristic_block"><span>Тип</span> Бензин</div>
+                <div class="characteristic_block"><span>Класс</span> MPV</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 114 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_8.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Li i8 EV</h3>
+                <div class="characteristic_block"><span>Тип</span> Гибрид</div>
+                <div class="characteristic_block"><span>Класс</span> Седан</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 35 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_9.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Avatr 07 Hybrid</h3>
+                <div class="characteristic_block"><span>Тип</span> Бензин</div>
+                <div class="characteristic_block"><span>Класс</span> SUV</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 35 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_10.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Dongfeng Nano 06 EV</h3>
+                <div class="characteristic_block"><span>Тип</span> EV</div>
+                <div class="characteristic_block"><span>Класс</span> Седан</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 60 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_11.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>BMW iX1 xDrive30L</h3>
+                <div class="characteristic_block"><span>Тип</span> Гибрид</div>
+                <div class="characteristic_block"><span>Класс</span> SUV</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 75 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Single Card -->
+            <article class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/catalog_12.avif" alt="car avatr" />
+              </div>
+              <div class="content_wrap">
+                <h3>Avatr 07 Hybrid</h3>
+                <div class="characteristic_block"><span>Тип</span> EV</div>
+                <div class="characteristic_block"><span>Класс</span> MPV</div>
+                <div class="characteristic_block">
+                  <span>Стоимость</span> от 32 000 $
+                </div>
+                <div class="btn_block">
+                  <a href="#" class="btn cta">Рассчитать стоимость</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Пагинация -->
+          <nav class="pagination" aria-label="Пагинация">
+            <ul class="pagination__list">
+              <li class="pagination__item">
+                <a
+                  class="pagination__link pagination__link__arrow"
+                  href="#"
+                  aria-label="Предыдущая страница"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15 6L9 12L15 18"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">1</a>
+              </li>
+
+              <li class="pagination__item">
+                <span class="pagination__dots">...</span>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">3</a>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">4</a>
+              </li>
+
+              <li class="pagination__item">
+                <span
+                  class="pagination__link pagination__link--active"
+                  aria-current="page"
+                  >5</span
+                >
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">6</a>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">7</a>
+              </li>
+
+              <li class="pagination__item">
+                <span class="pagination__dots">...</span>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">10</a>
+              </li>
+
+              <li class="pagination__item">
+                <a
+                  class="pagination__link pagination__link__arrow"
+                  href="#"
+                  aria-label="Следующая страница"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- info block -->
+          <div class="note_block">
+            Цены в каталоге носят <span>ориентировочный характер</span>.
+            <br class="desktop" />
+            Финальная стоимость зависит от комплектации, логистики и выбранного
+            пакета. <br class="desktop" />
+            Каждый расчёт формируется индивидуально. Но будьте уверены, цены
+            будут дешевле, чем у если Вы закажете автомобиль
+            <br class="desktop" />
+            в другом месте и сами займетесь подготовкой автомобиля к реалиям
+            белорусских дорог.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MARK: footer -->
+    <footer>
+      <div class="wrap_gradient">
+        <div class="gradient_top"></div>
+      </div>
+
+      <div class="wrap_footer">
+        <div class="inner_footer">
+          <div class="col col_logo">
+            <a href="/" class="logo">
+              <img src="./assets/images/logo.avif" alt="Future Auto логотип" />
+            </a>
+            <div class="anatation">
+              Премиальный сервис по импорту автомобилей из Китая под ключ
+            </div>
+          </div>
+          <div class="col col_contacts">
+            <div class="row_block">
+              <h3>Контакты:</h3>
+              <div class="contact_block phone">
+                <img src="./assets/images/icons/phone_footer.svg" alt="icon" />
+                <a href="tel:+375441233455" title="Контакт"
+                  >+375 44 123 24 55</a
+                >
+              </div>
+              <div class="contact_block mail">
+                <img src="./assets/images/icons/mail_footer.svg" alt="icon" />
+                <a href="mailto:mail@mail.com" title="Контакт">mail@mail.com</a>
+              </div>
+              <div class="socials_block">
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><img
+                        src="./assets/images/icons/viber_green.svg"
+                        alt="viber"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./assets/images/icons/whatsapp_green.svg"
+                        alt=""
+                      />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="./assets/images/icons/telegram_green.svg"
+                        alt=""
+                      />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="row_block">
+              <h3>Мы в соц. сетях:</h3>
+              <div class="contact_block phone">
+                <img src="./assets/images/icons/phone_footer.svg" alt="icon" />
+                <a href="tel:+375441233455" title="Контакт"
+                  >+375 44 123 24 55</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col col_legal">
+            <h3>Юридическая информация</h3>
+            <div class="legal_text">
+              <p>Частное предприятие "АГЕНТСТВО АЛИВЕС"</p>
+              <p><span>УНП:</span> 192531103</p>
+              <p>
+                <span>Юридический адрес:</span> 220081, Беларусь, Минский район,
+                д. Копище, ул. Камова 15 - 101
+              </p>
+              <p>
+                <span>Почтовый адрес:</span> 220114 Беларусь, г. Минск, ул.
+                Филимонова 25Б - 301
+              </p>
+              <p>
+                <span>Карт-счет:</span> BY37ALFA30122114750050270000 в BYN в ЗАО
+                'Альфа-Банк',
+              </p>
+              <p><span>БИК:</span> ALFABY2X"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

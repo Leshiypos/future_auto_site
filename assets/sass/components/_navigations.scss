@@ -154,3 +154,167 @@ header {
     top: 78px;
   }
 }
+
+// MARK: CATALOG PAGE
+// Pagination
+.pagination {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  @include fluid("margin-top", 48);
+  @include fluid("margin-bottom", 48);
+  &__list {
+    display: flex;
+    flex-flow: row nowrap;
+    @include fluid("gap", 10);
+  }
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .pagination__link,
+  .pagination__dots {
+    @include fluid("border-radius", 6);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    @include fluid("height", 40);
+    @include fluid("min-width", 32);
+    line-height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    @include fz_24;
+    letter-spacing: -0.02em;
+    @include fluid("padding-left", 5);
+    @include fluid("padding-right", 5);
+    &.pagination__link__arrow {
+      background: none;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      transition: opacity 0.3s ease;
+      &:hover {
+        opacity: 0.3;
+        background: none;
+      }
+    }
+  }
+  .pagination__link {
+    transition: all 0.3s ease;
+    &:hover {
+      color: white;
+      background: #285643;
+    }
+  }
+}
+
+// filter catalog
+.catalog_filters_form {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 24px;
+  @include fluid("margin-bottom", 15);
+  input[type="text"] {
+    background: none;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+  .dropdown_menu {
+    display: none;
+  }
+  .filter_block {
+    width: 100%;
+    display: flex;
+    @include fluid("height", 48);
+    &.sort {
+      width: fit-content;
+      .filter_toggle {
+        padding: 0;
+        @include fluid("width", 48);
+        @include fluid("height", 48);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .filter_toggle {
+      cursor: pointer;
+      width: 100%;
+      border-radius: 12px;
+      padding: 12px 18px;
+      background: rgba(40, 86, 67, 0.15);
+      border: 1px solid $accent_color;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      .btn_label {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: rgba(255, 255, 255, 0.65);
+      }
+    }
+  }
+  .filter_block_price {
+    width: 100%;
+    @include fluid("height", 48);
+    .wrap_block_price {
+      height: 100%;
+      border-radius: 12px;
+      padding: 12px 18px;
+      background: rgba(40, 86, 67, 0.15);
+      border: 1px solid $accent_color;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      .col {
+        flex: 1;
+        input {
+          width: 100%;
+          &::placeholder {
+            color: #fff;
+          }
+          color: #fff;
+        }
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: -0.02em;
+        color: rgba(255, 255, 255, 0.65);
+      }
+    }
+  }
+  .form_submit_btn {
+    width: 100%;
+    @include fluid("height", 48);
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: 16px;
+    border: none;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(
+      176deg,
+      rgba(32, 69, 54, 1) 37.02%,
+      rgb(44, 96, 75) 56.25%,
+      rgba(32, 69, 54, 1) 76.92%
+    );
+  }
+}
