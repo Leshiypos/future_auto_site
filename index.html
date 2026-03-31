@@ -198,7 +198,13 @@
               </li>
             </ul>
             <div class="btn_wrap">
-              <a href="#" class="btn cta">Получить консльтацию</a>
+              <a
+                href="#"
+                class="btn cta"
+                data-btn-open="main_popUp"
+                data-title-popup="Получить консультацию"
+                >Получить консультацию</a
+              >
             </div>
           </div>
         </div>
@@ -275,7 +281,7 @@
           </div>
         </div>
         <div class="btn_wrap desktop">
-          <a href="#" class="btn cta desktop"
+          <a href="#" class="btn cta desktop" data-btn-open="main_popUp"
             >Получить персональную консультацию</a
           >
         </div>
@@ -342,7 +348,13 @@
               </div>
 
               <div class="btn_wrap">
-                <a href="#" class="btn cta blue">Выбрать пакет</a>
+                <a
+                  href="#"
+                  class="btn cta blue"
+                  data-btn-open="main_popUp"
+                  data-title-popup="Выбрать пакет"
+                  >Выбрать пакет</a
+                >
               </div>
             </div>
           </div>
@@ -379,7 +391,13 @@
                 эксплуатации
               </p>
               <div class="btn_wrap">
-                <a href="#" class="btn cta">Выбрать пакет</a>
+                <a
+                  href="#"
+                  class="btn cta"
+                  data-btn-open="main_popUp"
+                  data-title-popup="Выбрать пакет"
+                  >Выбрать пакет</a
+                >
               </div>
             </div>
           </div>
@@ -406,7 +424,13 @@
                 <span>Стоимость</span> от 35 000 $
               </div>
               <div class="btn_block">
-                <a href="#" class="btn cta">Рассчитать стоимость</a>
+                <a
+                  href="#"
+                  class="btn cta"
+                  data-btn-open="main_popUp"
+                  data-title-popup="Рассчитать стоимость"
+                  >Рассчитать стоимость</a
+                >
               </div>
             </div>
           </article>
@@ -424,7 +448,13 @@
                 <span>Стоимость</span> от 45 000 $
               </div>
               <div class="btn_block">
-                <a href="#" class="btn cta">Рассчитать стоимость</a>
+                <a
+                  href="#"
+                  class="btn cta"
+                  data-btn-open="main_popUp"
+                  data-title-popup="Рассчитать стоимость"
+                  >Рассчитать стоимость</a
+                >
               </div>
             </div>
           </article>
@@ -442,7 +472,13 @@
                 <span>Стоимость</span> от 125 000 $
               </div>
               <div class="btn_block">
-                <a href="#" class="btn cta">Рассчитать стоимость</a>
+                <a
+                  href="#"
+                  class="btn cta"
+                  data-btn-open="main_popUp"
+                  data-title-popup="Рассчитать стоимость"
+                  >Рассчитать стоимость</a
+                >
               </div>
             </div>
           </article>
@@ -460,7 +496,13 @@
                 <span>Стоимость</span> от 35 000 $
               </div>
               <div class="btn_block">
-                <a href="#" class="btn cta">Рассчитать стоимость</a>
+                <a
+                  href="#"
+                  class="btn cta"
+                  data-btn-open="main_popUp"
+                  data-title-popup="Рассчитать стоимость"
+                  >Рассчитать стоимость</a
+                >
               </div>
             </div>
           </article>
@@ -478,14 +520,20 @@
                 <span>Стоимость</span> от 113 000 $
               </div>
               <div class="btn_block">
-                <a href="#" class="btn cta">Рассчитать стоимость</a>
+                <a
+                  href="#"
+                  class="btn cta"
+                  data-btn-open="main_popUp"
+                  data-title-popup="Рассчитать стоимость"
+                  >Рассчитать стоимость</a
+                >
               </div>
             </div>
           </article>
 
           <!-- Single Card -->
           <article class="card last">
-            <a href="#" class="into_catalog_btn">
+            <a href="/catalog.html" class="into_catalog_btn">
               <div class="title">
                 Перейти в <br />
                 каталог
@@ -713,7 +761,9 @@
             контакту
           </div>
           <div class="btn_wrap">
-            <a href="#" class="btn cta black">Получить консультацию</a>
+            <a href="#" class="btn cta black" data-btn-open="main_popUp"
+              >Получить консультацию</a
+            >
           </div>
         </div>
       </div>
@@ -809,9 +859,10 @@
         </div>
       </div>
     </footer>
-    <div class="popup_main" id="popup_main">
+    <!-- popUp main -->
+    <div class="popup_main" id="popup_main" data-block-closable="main_popUp">
       <div class="overlay">
-        <button class="close_popUp">
+        <button class="close_popUp" data-btn-close>
           <svg
             width="42"
             height="42"
@@ -829,7 +880,7 @@
       </div>
       <div class="wrap_popup">
         <div class="wrap_content">
-          <h2>Получить консультацию</h2>
+          <h2 data-title-popup>Получить консультацию</h2>
           <div class="description">
             Оставьте номер телефона или удобный мессенджер (WhatsApp, Telegram,
             Viber) <br />
@@ -860,18 +911,61 @@
                   </button>
                   <div class="dropdown_menu">
                     <ul>
-                      <li>-- Выберите способ связи --</li>
-                      <li>Телефон</li>
-                      <li>Почта</li>
-                      <li>Telegram</li>
-                      <li>Viber</li>
-                      <li>WhatsApp</li>
+                      <li
+                        data-status="disabled"
+                        data-name="no_active"
+                        data-type="text"
+                        data-placeholder="Выберите способ связи"
+                      >
+                        -- Выберите способ связи --
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="phone"
+                        data-type="tel"
+                        data-placeholder="Ваш телефон"
+                      >
+                        Телефон
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="mail"
+                        data-type="mail"
+                        data-placeholder="Ваш почта"
+                      >
+                        Почта
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="telegram"
+                        data-type="text"
+                        data-placeholder="Ваш Telegram"
+                      >
+                        Telegram
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="viber"
+                        data-type="text"
+                        data-placeholder="Ваш Viber"
+                      >
+                        Viber
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="whatsapp"
+                        data-type="text"
+                        data-placeholder="Ваш WhatsApp"
+                      >
+                        WhatsApp
+                      </li>
                     </ul>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <input
+                  id="input_popUp"
                   type="tel"
                   name="phone"
                   placeholder="Выберите способ связи"
@@ -880,7 +974,12 @@
               </div>
             </div>
             <div class="row btn_wrap">
-              <input type="submit" value="Отправить" disabled />
+              <input
+                type="submit"
+                value="Отправить"
+                disabled
+                id="submit_popUp"
+              />
             </div>
           </form>
         </div>

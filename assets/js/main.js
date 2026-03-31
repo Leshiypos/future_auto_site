@@ -47,6 +47,13 @@ function openBlockInit() {
       );
       return;
     }
+    // Добавляем заголовок если есть куда
+    const titlePopUp = blockOpen.querySelector("[data-title-popup]");
+    if (titlePopUp) {
+      titlePopUp.textContent =
+        btnOpen.dataset?.titlePopup || "Получить консультацию";
+    }
+
     // Был ли этот блок ОТКРЫТ до клика?
     const wasOpen = blockOpen.classList.contains("active");
     // Получаем метку группу окон
@@ -78,7 +85,11 @@ function closeBlockInit() {
   document.addEventListener("click", (e) => {
     const target = e.target;
     const btnClose = target.closest("[data-btn-close]");
+    const overlay = target.closest(".overlay");
     const blockClosable = target.closest("[data-block-closable]");
+    if (overlay) {
+      blockClosable.classList.remove("active");
+    }
     if (!btnClose || !blockClosable) return;
 
     blockClosable.classList.remove("active");
@@ -353,19 +364,41 @@ function popUpInit() {
   const popUp = document.querySelector("#contact_us_form");
   if (!popUp) return;
 
-  const btnTriger = popUp.querySelector(".filter_toggle");
-  let btnTrigerLabel = popUp.querySelector(".filter_toggle .btn_label");
-  const allLi = popUp.querySelectorAll(".dropdown_menu li");
-  const dropDownMenu = popUp.querySelector(".dropdown_menu");
+  const btnTriger = popUp.querySelector(".filter_toggle"); //Кнопка выпадающего меню
+  let btnTrigerLabel = popUp.querySelector(".filter_toggle .btn_label"); //Лейбл копки выпадающего меню
+  const allLi = popUp.querySelectorAll(".dropdown_menu li"); //все пункты выпада.щего меню
+  const dropDownMenu = popUp.querySelector(".dropdown_menu"); //выпадающее меню
+
+  const input = popUp.querySelector("#input_popUp");
+  const btnSubmit = popUp.querySelector("#submit_popUp");
 
   if (!btnTrigerLabel || !btnTriger || !dropDownMenu || !allLi.length) return;
   allLi.forEach((li) => {
     li.addEventListener("click", (e) => {
       const target = e.target;
-      const textLabel = target.textContent;
-      btnTrigerLabel.textContent = textLabel;
 
+      const textLabel = target.textContent;
+      const status = target.dataset.status;
+      const name = target.dataset.name;
+      const type = target.dataset.type;
+      const placeholder = target.dataset.placeholder;
+
+      btnTrigerLabel.textContent = textLabel;
       closeDropDown();
+
+      if (!input || !btnSubmit) return;
+      input.placeholder = placeholder;
+      input.type = type;
+      input.name = name;
+
+      if (status == "disabled") {
+        input.disabled = true;
+        input.value = "";
+        btnSubmit.disabled = true;
+      } else {
+        input.disabled = false;
+        btnSubmit.disabled = false;
+      }
     });
   });
 }

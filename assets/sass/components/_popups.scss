@@ -2,6 +2,10 @@
   z-index: 400;
   position: fixed;
   inset: 0;
+  display: none;
+  &.active {
+    display: block;
+  }
   .overlay {
     position: fixed;
     inset: 0;
@@ -10,10 +14,10 @@
     background: rgba(0, 0, 0, 0.35);
     button {
       position: fixed;
-      top: 19px;
-      right: 19px;
-      width: 42px;
-      height: 42px;
+      @include fluid("top", 19);
+      @include fluid("right", 19);
+      @include fluid("width", 42);
+      @include fluid("height", 42);
       background: none;
       border: none;
       cursor: pointer;
@@ -34,8 +38,11 @@
       z-index: 401;
       transform: translate(-50%, -50%);
       @include fluid("width", 924);
-      padding: 42px 86px 47px;
-      border-radius: 36px;
+      @include fluid("padding-top", 42);
+      @include fluid("padding-left", 86);
+      @include fluid("padding-right", 86);
+      @include fluid("padding-bottom", 47);
+      @include fluid("border-radius", 36);
       background:
         linear-gradient(
           180deg,
@@ -45,18 +52,36 @@
         #285643;
       h2 {
         font-weight: 400;
-        font-size: 38px;
+        @include fz_38;
         text-align: center;
         text-transform: uppercase;
-        margin-bottom: 17px;
+        @include fluid("margin-bottom", 17);
+        @include tablet {
+          margin-bottom: 11px;
+        }
       }
       .description {
         font-weight: 500;
-        font-size: 18px;
+        @include fz_18;
         line-height: 110%;
         letter-spacing: -0.02em;
         text-align: center;
-        margin-bottom: 33px;
+        @include fluid("margin-bottom", 33);
+        @include tablet {
+          font-size: 16px;
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 15px;
+          br {
+            display: none;
+          }
+        }
+      }
+      @include tablet {
+        width: 95%;
+        padding: 40px 23px;
+        border-radius: 15px;
       }
     }
   }
@@ -64,44 +89,57 @@
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
-    gap: 30px;
+    @include fluid("gap", 30);
     .col {
       flex: 1;
       width: 100%;
+    }
+    @include tablet {
+      flex-direction: column;
+      gap: 15px;
     }
   }
   .filter_block {
     position: relative;
     .filter_toggle {
       font-weight: 500;
-      font-size: 18px;
+      @include fz_18;
       letter-spacing: -0.02em;
       display: flex;
       width: 100%;
       justify-content: space-between;
       align-items: center;
       border: 1px solid #ffffff;
-      border-radius: 12px;
+      @include fluid("border-radius", 12);
       background: none;
-      height: 48px;
-      padding-left: 18px;
-      padding-right: 18px;
+      @include fluid("height", 48);
+      @include fluid("padding-left", 18);
+      @include fluid("padding-right", 18);
       cursor: pointer;
+      svg {
+        transition: transform 0.3s ease;
+      }
       &.active {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         border-bottom: none;
         backdrop-filter: blur(5px);
         background: rgba(40, 86, 67, 0.8);
+        svg {
+          transform: rotate(-180deg);
+        }
+      }
+      @include tablet {
+        font-size: 16px;
       }
     }
     .dropdown_menu {
       display: none;
       position: absolute;
       top: 100%;
-      border-radius: 12px;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      @include fluid("border-radius", 12);
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
       backdrop-filter: blur(5px);
       z-index: 401;
       background: rgba(40, 86, 67, 0.8);
@@ -111,11 +149,17 @@
         display: block;
       }
       li {
-        padding: 12px 18px;
-        font-size: 18px;
+        @include fluid("padding-top", 12);
+        @include fluid("padding-left", 18);
+        @include fluid("padding-right", 18);
+        @include fluid("padding-bottom", 12);
+        @include fz_18;
         cursor: pointer;
         &:hover {
           background: rgba(255, 255, 255, 0.1);
+        }
+        @include tablet {
+          font-size: 16px;
         }
       }
     }
@@ -123,30 +167,43 @@
   .contact_us_form {
     display: flex;
     flex-flow: column nowrap;
-    gap: 33px;
+    @include fluid("gap", 33);
+    @include tablet {
+      gap: 15px;
+    }
   }
   input {
     font-weight: 500;
-    font-size: 18px;
+    @include fz_18;
     letter-spacing: -0.02em;
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #ffffff;
-    border-radius: 12px;
+    @include fluid("border-radius", 12);
     background: none;
-    height: 48px;
+    @include fluid("height", 48);
     padding-left: 18px;
     padding-right: 18px;
+    @include fluid("padding-left", 18);
+    @include fluid("padding-right", 18);
     &:disabled {
       opacity: 0.35;
+    }
+    @include tablet {
+      font-size: 16px;
+      height: 46px;
     }
   }
   .btn_wrap {
     input[type="submit"] {
-      border-radius: 16px;
-      padding: 19px 48px 22px;
+      cursor: pointer;
+      @include fluid("border-radius", 16);
+      @include fluid("padding-top", 19);
+      @include fluid("padding-left", 48);
+      @include fluid("padding-right", 48);
+      @include fluid("padding-bottom", 22);
       box-shadow: 0 4px 0 0 #000;
       border: none;
       display: flex;
@@ -154,8 +211,9 @@
       align-items: center;
       justify-content: center;
       padding: 0;
-      padding-left: 18px;
-      padding-right: 18px;
+
+      @include fluid("padding-left", 18);
+      @include fluid("padding-right", 18);
       background:
         linear-gradient(
           176deg,
@@ -175,6 +233,16 @@
           ),
           #0e100f;
         opacity: 0.25;
+      }
+      @include tablet {
+        font-size: 20px;
+        padding: 0;
+        display: flex;
+        flex-grow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        height: 58px;
+        border-radius: 10px;
       }
     }
   }

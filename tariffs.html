@@ -193,7 +193,13 @@
                   эксплуатации
                 </p>
                 <div class="btn_wrap">
-                  <a href="#" class="btn cta">Выбрать пакет</a>
+                  <a
+                    href="#"
+                    class="btn cta"
+                    data-btn-open="main_popUp"
+                    data-title-popup="Выбрать пакет"
+                    >Выбрать пакет</a
+                  >
                 </div>
               </div>
             </div>
@@ -248,7 +254,13 @@
                   </p>
                 </div>
                 <div class="btn_wrap">
-                  <a href="#" class="btn cta blue">Выбрать пакет</a>
+                  <a
+                    href="#"
+                    class="btn cta blue"
+                    data-btn-open="main_popUp"
+                    data-title-popup="Выбрать пакет"
+                    >Выбрать пакет</a
+                  >
                 </div>
               </div>
             </div>
@@ -522,6 +534,133 @@
         </div>
       </div>
     </footer>
+
+    <!-- popUp main -->
+    <div class="popup_main" id="popup_main" data-block-closable="main_popUp">
+      <div class="overlay">
+        <button class="close_popUp" data-btn-close>
+          <svg
+            width="42"
+            height="42"
+            viewBox="0 0 42 42"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 33.5502L33.5503 9M33.5503 33.5502L9 9"
+              stroke="white"
+              stroke-width="4"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="wrap_popup">
+        <div class="wrap_content">
+          <h2 data-title-popup>Получить консультацию</h2>
+          <div class="description">
+            Оставьте номер телефона или удобный мессенджер (WhatsApp, Telegram,
+            Viber) <br />
+            Мы свяжемся с вами там, где вам комфортнее
+          </div>
+          <form id="contact_us_form" class="contact_us_form">
+            <div class="row">
+              <div class="col dropdown_form">
+                <!-- Filter block -->
+                <div class="filter_block">
+                  <button type="button" class="filter_toggle" data-dropdown-btn>
+                    <div class="btn_label">-- Выберите способ связи --</div>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 9L12 14L7 9"
+                        stroke="white"
+                        stroke-opacity="0.65"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <div class="dropdown_menu">
+                    <ul>
+                      <li
+                        data-status="disabled"
+                        data-name="no_active"
+                        data-type="text"
+                        data-placeholder="Выберите способ связи"
+                      >
+                        -- Выберите способ связи --
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="phone"
+                        data-type="tel"
+                        data-placeholder="Ваш телефон"
+                      >
+                        Телефон
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="mail"
+                        data-type="mail"
+                        data-placeholder="Ваш почта"
+                      >
+                        Почта
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="telegram"
+                        data-type="text"
+                        data-placeholder="Ваш Telegram"
+                      >
+                        Telegram
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="viber"
+                        data-type="text"
+                        data-placeholder="Ваш Viber"
+                      >
+                        Viber
+                      </li>
+                      <li
+                        data-status="enabled"
+                        data-name="whatsapp"
+                        data-type="text"
+                        data-placeholder="Ваш WhatsApp"
+                      >
+                        WhatsApp
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <input
+                  id="input_popUp"
+                  type="tel"
+                  name="phone"
+                  placeholder="Выберите способ связи"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="row btn_wrap">
+              <input
+                type="submit"
+                value="Отправить"
+                disabled
+                id="submit_popUp"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <!-- MARK: Gradients -->
     <div class="wrap_gradient_center">
       <div class="gradient"></div>
