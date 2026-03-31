@@ -137,6 +137,9 @@ a {
 // common styles
 body {
   background-color: $bg_color;
+  @include tablet {
+    background-color: black;
+  }
 }
 
 *,

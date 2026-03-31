@@ -153,6 +153,8 @@
       <section class="catalog_general_section">
         <div class="wrap_section">
           <h2 class="text_center">Каталог</h2>
+
+          <!-- MARK: блок фильтров -->
           <div class="filter_wrap desktop">
             <form
               id="catalog_filters_form"
@@ -456,11 +458,247 @@
             </form>
             <div class="tags_block" id="tag_block"></div>
           </div>
+
+          <div class="filter_wrap_mobile">
+            <!-- Filter block -->
+            <div class="filter_block sort">
+              <button type="button" data-dropdown-btn class="filter_toggle">
+                <div class="btn_label">По названию</div>
+                <img
+                  src="./assets/images/icons/arrow_down.svg"
+                  alt="arrow down"
+                />
+              </button>
+              <div class="dropdown_menu">
+                <ul class="filter_list">
+                  <li class="filter_item">
+                    <label>
+                      <input type="radio" name="sort" value="cheaper" checked />
+                      <img
+                        src="./assets/images/icons/check_filter.svg"
+                        alt="icon check"
+                        class="radio_ckeck"
+                      />
+                      Дешевле</label
+                    >
+                  </li>
+                  <li class="filter_item">
+                    <label>
+                      <input type="radio" name="sort" value="more_expensive" />
+                      <img
+                        src="./assets/images/icons/check_filter.svg"
+                        alt="icon check"
+                        class="radio_ckeck"
+                      />
+                      Дороже</label
+                    >
+                  </li>
+                  <li>
+                    <label>
+                      <input type="radio" name="sort" value="by_name" />
+                      <img
+                        src="./assets/images/icons/check_filter.svg"
+                        alt="icon check"
+                        class="radio_ckeck"
+                      />
+                      По названию</label
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Кнопка окрытия попАпа фильтров -->
+            <div class="filter_block">
+              <button
+                type="button"
+                class="filter_toggle"
+                data-btn-open="poup_filter_mobile"
+              >
+                <img
+                  src="./assets/images/icons/tabler_filter.svg"
+                  alt="arrow down"
+                />
+                <div class="btn_label">Фильтр</div>
+              </button>
+            </div>
+
+            <!-- PopUp form mobile -->
+            <div
+              class="filters_popup_mobile"
+              data-block-closable="poup_filter_mobile"
+            >
+              <div class="wrap_filters">
+                <div class="top_block">
+                  <div class="header">
+                    <h2>Фильтр</h2>
+                    <button type="button" class="close_popup" data-btn-close>
+                      <img
+                        src="./assets/images/icons/close_popup_cross.svg"
+                        alt="close popUp btn"
+                      />
+                    </button>
+                  </div>
+                  <form
+                    id="catalog_filters_form_mobile"
+                    class="catalog_filters_form_mobile"
+                    method="GET"
+                  >
+                    <div class="filter_block price">
+                      <h3>Стоимость</h3>
+                      <div class="wrap_block_price">
+                        <div class="col input_field">
+                          <input
+                            type="text"
+                            name="price_from"
+                            placeholder="1000"
+                          />
+                        </div>
+                        <div class="col input_field">
+                          <input
+                            type="text"
+                            name="price_to"
+                            placeholder="20000"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Filter block -->
+                    <div class="filter_block">
+                      <h3>Тип двигателя</h3>
+                      <ul class="filter_list">
+                        <li class="filter_item">
+                          <label>
+                            <input type="checkbox" name="engine[]" value="EV" />
+                            <div class="fake_checkbox">
+                              <div class="wrap_check">
+                                <img
+                                  src="./assets/images/icons/check_black.svg"
+                                  alt="check icon"
+                                />
+                              </div>
+                            </div>
+                            <span class="label_text">EV</span></label
+                          >
+                        </li>
+                        <li class="filter_item">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="engine[]"
+                              value="hybrid"
+                            />
+                            <div class="fake_checkbox">
+                              <div class="wrap_check">
+                                <img
+                                  src="./assets/images/icons/check_black.svg"
+                                  alt="check icon"
+                                />
+                              </div>
+                            </div>
+                            <span class="label_text">Гибрид</span></label
+                          >
+                        </li>
+                        <li class="filter_item">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="engine[]"
+                              value="petrol"
+                            />
+                            <div class="fake_checkbox">
+                              <div class="wrap_check">
+                                <img
+                                  src="./assets/images/icons/check_black.svg"
+                                  alt="check icon"
+                                />
+                              </div>
+                            </div>
+                            <span class="label_text">Бензин</span></label
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- Filter block -->
+                    <div class="filter_block">
+                      <ul class="filter_list">
+                        <li class="filter_item">
+                          <label>
+                            <input type="checkbox" name="class[]" value="SUV" />
+                            <div class="fake_checkbox">
+                              <div class="wrap_check">
+                                <img
+                                  src="./assets/images/icons/check_black.svg"
+                                  alt="check icon"
+                                />
+                              </div>
+                            </div>
+                            <span class="label_text">SUV</span></label
+                          >
+                        </li>
+                        <li class="filter_item">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="class[]"
+                              value="sedan"
+                            />
+                            <div class="fake_checkbox">
+                              <div class="wrap_check">
+                                <img
+                                  src="./assets/images/icons/check_black.svg"
+                                  alt="check icon"
+                                />
+                              </div>
+                            </div>
+                            <span class="label_text">Сeдан</span></label
+                          >
+                        </li>
+                        <li class="filter_item">
+                          <label>
+                            <input
+                              type="checkbox"
+                              name="class[]"
+                              value="minivan"
+                            />
+                            <div class="fake_checkbox">
+                              <div class="wrap_check">
+                                <img
+                                  src="./assets/images/icons/check_black.svg"
+                                  alt="check icon"
+                                />
+                              </div>
+                            </div>
+                            <span class="label_text">Минивен</span></label
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="btn_block bottom_block">
+                  <input
+                    type="reset"
+                    value="Сбросить"
+                    form="catalog_filters_form_mobile"
+                  />
+                  <input
+                    type="submit"
+                    value="Найти"
+                    form="catalog_filters_form_mobile"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- MARK: Блок автомобилей -->
           <div class="models_block">
             <!-- Single Card -->
             <article class="card">
               <div class="img_wrap">
-                <img src="./assets/images/catalog_1.avif" alt="car avatr" />
+                <img src="./assets/images/catalog_1.avif" alt="car avatar" />
               </div>
               <div class="content_wrap">
                 <h3>Avatr 07 Hybrid</h3>
@@ -675,7 +913,7 @@
           </div>
 
           <!-- Пагинация -->
-          <nav class="pagination" aria-label="Пагинация">
+          <nav class="pagination desktop" aria-label="Пагинация">
             <ul class="pagination__list">
               <li class="pagination__item">
                 <a
@@ -739,6 +977,85 @@
 
               <li class="pagination__item">
                 <a class="pagination__link" href="#">10</a>
+              </li>
+
+              <li class="pagination__item">
+                <a
+                  class="pagination__link pagination__link__arrow"
+                  href="#"
+                  aria-label="Следующая страница"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 18L15 12L9 6"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Пагинация -->
+          <nav class="pagination mobile" aria-label="Пагинация">
+            <ul class="pagination__list">
+              <li class="pagination__item">
+                <a
+                  class="pagination__link pagination__link__arrow"
+                  href="#"
+                  aria-label="Предыдущая страница"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15 6L9 12L15 18"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">1</a>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">7</a>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">8</a>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">9</a>
+              </li>
+
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">10</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">11</a>
+              </li>
+              <li class="pagination__item">
+                <a class="pagination__link" href="#">17</a>
               </li>
 
               <li class="pagination__item">
@@ -873,5 +1190,11 @@
         </div>
       </div>
     </footer>
+    <div class="wrap_gradient_top">
+      <div class="gradient"></div>
+    </div>
+    <div class="wrap_gradient_bottom left">
+      <div class="gradient"></div>
+    </div>
   </body>
 </html>

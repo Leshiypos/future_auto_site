@@ -163,10 +163,21 @@ header {
   justify-content: center;
   @include fluid("margin-top", 48);
   @include fluid("margin-bottom", 48);
+  @include tablet {
+    margin-top: 23px;
+    margin-bottom: 23px;
+  }
   &__list {
     display: flex;
     flex-flow: row nowrap;
     @include fluid("gap", 10);
+    @include tablet {
+      gap: 10px;
+      justify-content: center;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   &__item {
     flex: 1;
@@ -202,8 +213,22 @@ header {
         opacity: 0.3;
         background: none;
       }
+      @include tablet {
+        width: 34px;
+        height: 34px;
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    @include tablet {
+      font-size: 23px;
+      width: 34px;
+      height: 34px;
     }
   }
+
   .pagination__link {
     transition: all 0.3s ease;
     &:hover {
@@ -447,5 +472,269 @@ header {
       rgb(44, 96, 75) 56.25%,
       rgba(32, 69, 54, 1) 76.92%
     );
+  }
+}
+
+// MARK: Мобильные фильтры
+.filter_wrap_mobile {
+  margin-bottom: 23px;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  display: none;
+  @include tablet {
+    display: flex;
+  }
+  .dropdown_menu {
+    display: none;
+    position: absolute;
+    top: 120%;
+    z-index: 103;
+    font-weight: 500;
+    font-style: 16px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    padding: 6px 18px;
+    backdrop-filter: blur(20px);
+    background: rgba(14, 16, 15, 0.8);
+    border-radius: 10px;
+    min-width: 300px;
+    &.open {
+      display: block;
+    }
+    .filter_list {
+      label {
+        cursor: pointer;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 9px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+
+        input {
+          display: none;
+        }
+
+        img.radio_ckeck {
+          width: 20px;
+          height: 20px;
+          opacity: 0;
+          //   display: none;
+        }
+        input:checked + img {
+          opacity: 1;
+        }
+      }
+      li {
+        &:first-child {
+          label {
+            border-bottom: 1px solid #285643;
+          }
+        }
+        &:last-child {
+          label {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+
+  .filter_block {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    &.sort {
+      width: fit-content;
+
+      .filter_list {
+        label {
+          border-bottom: 1px solid #285643;
+        }
+      }
+    }
+    .filter_toggle {
+      cursor: pointer;
+      width: 100%;
+      border-radius: 8px;
+      padding: 8px 15px;
+      background: rgba(40, 86, 67, 0.15);
+      border: 1px solid $accent_color;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      .btn_label {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: #fff;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+// MARK: filter popUp mobile
+.filters_popup_mobile {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: -120%;
+  left: 0;
+  z-index: 110;
+  background-color: black;
+  padding: 26px 22px 30px;
+  transition: top 0.5s ease;
+  &.active {
+    top: 0;
+  }
+  .wrap_filters {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+  }
+  h3 {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 26px;
+    margin-bottom: 23px;
+    h2 {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 120%;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 23px;
+    .filter_block {
+      display: flex;
+      flex-flow: column nowrap;
+      &.price {
+        width: 100%;
+      }
+    }
+    .wrap_block_price {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: 19px;
+      .col {
+        flex: 1;
+        input {
+          width: 100%;
+          background: none;
+          padding: 11px 15px;
+          border: 1px solid $accent_color;
+          outline: none;
+          border-radius: 8px;
+        }
+      }
+    }
+    .filter_list {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 10px;
+      label {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: #fff;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 10px;
+        input {
+          display: none;
+        }
+        // fake checkbox
+        .fake_checkbox {
+          width: 26px;
+          height: 26px;
+          border-radius: 6px;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid $accent_color;
+          .wrap_check {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            background: #5ba77c;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 12px;
+              height: 8px;
+            }
+            display: none;
+          }
+        }
+        input:checked + .fake_checkbox {
+          .wrap_check {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  .btn_block {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 13px;
+    width: 100%;
+    padding-top: 23px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    input {
+      height: 58px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: #fff;
+      background: none;
+      border: 1px solid $accent_color;
+      &[type="reset"] {
+        flex: 1;
+      }
+      &[type="submit"] {
+        flex: 2;
+        box-shadow: 0 3px 0 0 #153b2b;
+        background: linear-gradient(
+          176deg,
+          rgba(32, 69, 54, 1) 37.02%,
+          rgb(44, 96, 75) 56.25%,
+          rgba(32, 69, 54, 1) 76.92%
+        );
+      }
+    }
   }
 }

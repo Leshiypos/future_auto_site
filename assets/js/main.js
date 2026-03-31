@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Функция открытия popUp
   openBlockInit();
 
+  //   Функция закрытия popUap
+  closeBlockInit();
   //   Добавление класса к меню при скролле
   addClassWhenScroll();
 
@@ -66,6 +68,18 @@ function openBlockInit() {
 
     // Если был закрыт — открываем его
     blockOpen.classList.add("active");
+  });
+}
+// функция закрытия
+function closeBlockInit() {
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    const btnClose = target.closest("[data-btn-close]");
+    const blockClosable = target.closest("[data-block-closable]");
+    console.log(btnClose);
+    if (!btnClose || !blockClosable) return;
+
+    blockClosable.classList.remove("active");
   });
 }
 
