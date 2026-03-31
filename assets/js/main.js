@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //   Добавление быстрых тэгов
   toggleTagsInitFilter();
+
+  // Функция Логика PopUps
+  popUpInit();
 });
 
 // MARK: Функция открытия попапов
@@ -76,7 +79,6 @@ function closeBlockInit() {
     const target = e.target;
     const btnClose = target.closest("[data-btn-close]");
     const blockClosable = target.closest("[data-block-closable]");
-    console.log(btnClose);
     if (!btnClose || !blockClosable) return;
 
     blockClosable.classList.remove("active");
@@ -103,9 +105,15 @@ function addClassWhenScroll() {
 function dropDownBtn() {
   function closeAllDropdownMenus() {
     const menus = document.querySelectorAll(".dropdown_menu.open");
+    const btnsTrigger = document.querySelectorAll("[data-dropdown-btn].active");
     menus.forEach((menu) => {
       menu.classList.remove("open");
     });
+    if (btnsTrigger) {
+      btnsTrigger.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+    }
   }
 
   window.addEventListener("scroll", closeAllDropdownMenus);
@@ -133,6 +141,7 @@ function dropDownBtn() {
 
     if (!isOpen) {
       dropdownMenu.classList.add("open");
+      btnTrigger.classList.add("active");
     }
   });
 }
@@ -330,5 +339,33 @@ function toggleTagsInitFilter() {
     if (checkedNotDefault.length === 0 && defaultInput) {
       defaultInput.checked = true;
     }
+  });
+}
+
+// Функция Логика PopUps
+
+function popUpInit() {
+  function closeDropDown() {
+    dropDownMenu.classList.remove("open");
+    btnTriger.classList.remove("active");
+  }
+
+  const popUp = document.querySelector("#contact_us_form");
+  if (!popUp) return;
+
+  const btnTriger = popUp.querySelector(".filter_toggle");
+  let btnTrigerLabel = popUp.querySelector(".filter_toggle .btn_label");
+  const allLi = popUp.querySelectorAll(".dropdown_menu li");
+  const dropDownMenu = popUp.querySelector(".dropdown_menu");
+
+  if (!btnTrigerLabel || !btnTriger || !dropDownMenu || !allLi.length) return;
+  allLi.forEach((li) => {
+    li.addEventListener("click", (e) => {
+      const target = e.target;
+      const textLabel = target.textContent;
+      btnTrigerLabel.textContent = textLabel;
+
+      closeDropDown();
+    });
   });
 }
