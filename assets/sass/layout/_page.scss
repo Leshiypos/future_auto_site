@@ -196,6 +196,40 @@ h2 {
         font-size: 24px;
       }
     }
+    & > ul {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 24px;
+
+      li {
+        position: relative;
+        font-weight: 500;
+        font-size: 18px;
+        @include fz_18;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        @include fluid("padding-left", 16);
+        max-width: 425px;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0; /* 👈 растягивается по всей высоте li */
+          width: 4px;
+          background: linear-gradient(
+            180deg,
+            #377159 0%,
+            rgba(55, 113, 89, 0.45) 100%
+          );
+        }
+      }
+
+      @include fluid("margin-bottom", 55);
+      @include tablet {
+        margin-bottom: 30px;
+      }
+    }
   }
   @include tablet {
     .wrap_bg {
@@ -767,25 +801,61 @@ h2 {
       height: 100%;
       display: flex;
       flex-flow: column nowrap;
+      & > div {
+        @include fz_18;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        color: rgba(255, 255, 255, 0.65);
+        span {
+          color: $accent_color;
+        }
+        @include tablet {
+          font-size: 15px;
+        }
+      }
+
       @include fluid("gap", 20);
       background: linear-gradient(
         180deg,
         rgb(18, 27, 23) 0%,
         rgb(18, 27, 23) 100%
       );
-      .features_list {
+      & > ul {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 24px;
         margin-bottom: 0;
         li {
-          .desciption {
-            @include fz_18;
-            line-height: 110%;
-            letter-spacing: -0.02em;
-            color: rgba(255, 255, 255, 0.65);
-            @include tablet {
-              font-size: 15px;
-            }
+          position: relative;
+          font-weight: 500;
+          @include fz_18;
+          line-height: 110%;
+          letter-spacing: -0.02em;
+          @include fluid("padding-left", 16);
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0; /* 👈 растягивается по всей высоте li */
+            width: 4px;
+            background: linear-gradient(
+              180deg,
+              #377159 0%,
+              rgba(55, 113, 89, 0.45) 100%
+            );
+          }
+          max-width: 425px;
+          color: rgba(255, 255, 255, 0.65);
+          @include tablet {
+            font-size: 15px;
           }
         }
+
+        // @include tablet {
+        //   margin-bottom: 30px;
+        // }
+
         @include tablet {
           gap: 13px;
         }
@@ -809,18 +879,7 @@ h2 {
       font-size: 23px;
     }
   }
-  .post_title {
-    @include fz_18;
-    line-height: 110%;
-    letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.65);
-    span {
-      color: $accent_color;
-    }
-    @include tablet {
-      font-size: 15px;
-    }
-  }
+
   @include tablet {
     margin-top: 51px;
   }
@@ -1486,7 +1545,7 @@ body {
     .advantage {
       flex: 1 1 350px;
       .wrap_advantage {
-        .features_list {
+        & > ul {
           @include fluid("gap", 12);
         }
       }
@@ -1518,26 +1577,24 @@ body {
 
 // MARK: CONTACTS PAGE
 
-.contacts_page {
-  .wrap_gradient {
-    display: none;
-    @include tablet {
-      display: block;
-    }
+.wrap_gradient.contacts_page {
+  display: none;
+  @include tablet {
+    display: block;
   }
-  .header_page {
-    .btn_block {
-      @include fluid("margin-top", 30);
-      a {
-        margin-left: auto;
-        margin-right: auto;
-        @include tablet {
-          width: 100%;
-        }
-      }
+}
+.header_page.contacts_page {
+  .btn_block {
+    @include fluid("margin-top", 30);
+    a {
+      margin-left: auto;
+      margin-right: auto;
       @include tablet {
-        margin-top: 11px;
+        width: 100%;
       }
+    }
+    @include tablet {
+      margin-top: 11px;
     }
   }
 }
